@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "json-server",
-      "author": "men.svg"
+      "cover": "url('../assets/men.svg')"
     }
   ]
 }
