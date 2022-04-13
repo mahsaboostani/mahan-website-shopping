@@ -53,21 +53,27 @@
   <div id="fullpage">
     <section class="section" data-anchor="women">
       <div class="container">
-        <img class="img-fluid" src="../assets/women.svg" alt="" />
+        <router-link :to="{ name: 'ListView', params: { category: 'women' } }"
+          ><img class="img-fluid" src="../assets/women.svg" alt=""
+        /></router-link>
       </div>
     </section>
 
     <!---men clothes-->
     <section class="section" data-anchor="men">
       <div class="container">
-        <img class="img-fluid" src="../assets/men.svg" alt="" />
+        <router-link :to="{ name: 'ListView', params: { category: 'men' } }"
+          ><img class="img-fluid" src="../assets/men.svg" alt=""
+        /></router-link>
       </div>
     </section>
 
     <!---kids clothes-->
     <section class="section" data-anchor="kids">
       <div class="container">
-        <img class="img-fluid" src="../assets/kids.svg" alt="" />
+        <router-link :to="{ name: 'ListView', params: { category: 'kids' } }"
+          ><img class="img-fluid" src="../assets/kids.svg" alt=""
+        /></router-link>
       </div>
     </section>
 
@@ -75,7 +81,9 @@
     <section class="section" data-anchor="sale">
       <div class="container">
         <a class="mylink" href="#">
-          <img class="img-fluid" src="../assets/sale.svg" alt="" />
+          <router-link :to="{ name: 'ListView', params: { category: 'sale' } }"
+            ><img class="img-fluid" src="../assets/sale.svg" alt=""
+          /></router-link>
         </a>
       </div>
     </section>
@@ -146,8 +154,13 @@
 
 export default {
   inject: ["fullpage"],
+  data() {
+    return {
+      fullpage_api: null,
+    };
+  },
   mounted() {
-    new this.fullpage("#fullpage", {
+    this.fullpage_api = new this.fullpage("#fullpage", {
       licenseKey: "gplv3-license",
       autoScrolling: true,
       scrollHorizontally: true,
@@ -178,6 +191,9 @@ export default {
         }
       },
     });
+  },
+  unmounted() {
+    this.fullpage_api.destroy("all");
   },
 };
 </script>

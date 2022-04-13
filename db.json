@@ -1,9 +1,172 @@
 {
-  "events": [
+  "women": [
     {
       "id": 1,
-      "title": "json-server",
-      "cover": "url('../assets/men.svg')"
+      "title": "jacket",
+      "image": "1.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 2,
+      "title": "jacket",
+      "image": "2.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 3,
+      "title": "jacket",
+      "image": "3.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 4,
+      "title": "jacket",
+      "image": "4.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 5,
+      "title": "jacket",
+      "image": "5.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 6,
+      "title": "jacket",
+      "image": "6.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 7,
+      "title": "jacket",
+      "image": "7.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 8,
+      "title": "jacket",
+      "image": "8.jpeg",
+      "price": "54$"
+    }
+  ],
+  "men": [
+    {
+      "id": 1,
+      "title": "jacket",
+      "image": "1.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 2,
+      "title": "jacket",
+      "image": "2.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 3,
+      "title": "jacket",
+      "image": "3.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 4,
+      "title": "jacket",
+      "image": "4.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 5,
+      "title": "jacket",
+      "image": "5.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 6,
+      "title": "jacket",
+      "image": "6.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 7,
+      "title": "jacket",
+      "image": "7.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 8,
+      "title": "jacket",
+      "image": "8.jpeg",
+      "price": "54$"
+    }
+  ],
+  "kids": [
+    {
+      "id": 1,
+      "title": "jacket",
+      "image": "1.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 2,
+      "title": "jacket",
+      "image": "2.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 3,
+      "title": "jacket",
+      "image": "3.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 4,
+      "title": "jacket",
+      "image": "4.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 5,
+      "title": "jacket",
+      "image": "5.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 6,
+      "title": "jacket",
+      "image": "6.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 7,
+      "title": "jacket",
+      "image": "7.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 8,
+      "title": "jacket",
+      "image": "8.jpeg",
+      "price": "54$"
+    }
+  ],
+  "sale": [
+    {
+      "id": 1,
+      "title": "jacket",
+      "image": "1.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 2,
+      "title": "jacket",
+      "image": "2.jpeg",
+      "price": "54$"
+    },
+    {
+      "id": 3,
+      "title": "jacket",
+      "image": "3.jpeg",
+      "price": "54$"
     }
   ]
 }
