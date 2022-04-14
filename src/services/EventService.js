@@ -8,3 +8,11 @@ export const apiClient = axios.create({
     "Content-Type": "application/json",
   },
 });
+export default {
+  getEvents(category) {
+    return apiClient.get(category);
+  },
+  getEvent(category, id) {
+    return apiClient.get(category + "/" + id);
+  },
+};

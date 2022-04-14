@@ -2,7 +2,6 @@
   "women": [
     {
       "id": 1,
-<<<<<<< HEAD
       "title": "jacket",
       "image": "1.jpeg",
       "price": "54$"
@@ -168,10 +167,6 @@
       "title": "jacket",
       "image": "3.jpeg",
       "price": "54$"
-=======
-      "title": "json-server33",
-      "cover": "url('../assets/men.svg')"
->>>>>>> e7177ab308d46cad973346c877b40983d5b27a84
     }
   ]
 }
