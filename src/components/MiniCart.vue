@@ -13,13 +13,7 @@
           {{ item.quantity }} x ${{ item.price }}
         </div>
         <div>
-          <a
-            @click="removeFromCart(item)"
-            href="#"
-            class="badge badge-secondary"
-          >
-            Remove</a
-          >
+          <a @click="removeFromCart(item)" href="#" class="button"> Remove</a>
         </div>
       </div>
     </div>
@@ -32,7 +26,7 @@
 <script>
 export default {
   name: "MiniCart",
-  props: ["active", "product"],
+  props: ["active"],
   computed: {
     cart() {
       return this.$store.state.cart;
@@ -43,7 +37,6 @@ export default {
   },
   methods: {
     removeFromCart(item) {
-      console.log(this.product);
       this.$store.dispatch("removeFromCart", item);
     },
   },

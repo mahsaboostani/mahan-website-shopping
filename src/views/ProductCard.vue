@@ -36,6 +36,7 @@ export default {
     addToCart() {
       console.log(this.product);
       this.$store.dispatch("addToCart", this.product);
+      alert("The product has been added to cart");
     },
   },
 };

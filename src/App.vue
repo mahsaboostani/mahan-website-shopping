@@ -18,10 +18,8 @@
             <img src="./assets/Help.svg" alt="" />
           </li>
           <li class="pr-3">
-            <a href=""
-              ><MiniCart
-                :active="active.showDropDown"
-                :product="this.product" />
+            <a class="badge text-dark" :value="cart.length" href=""
+              ><MiniCart :active="active.showDropDown" />
               <img
                 @click.prevent="viewDropDown()"
                 src="./assets/Shopping-Bag.svg"
@@ -44,6 +42,11 @@ export default {
   },
   components: {
     MiniCart,
+  },
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
   },
   mounted() {
     this.$store.dispatch("updateCartFromLocalStorage");
@@ -80,5 +83,18 @@ nav {
       color: #42b983;
     }
   }
+}
+
+.badge:after {
+  content: attr(value);
+  font-size: 12px;
+  color: #fff;
+  background: red;
+  border-radius: 50%;
+  padding: 0 5px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 0.9;
 }
 </style>
