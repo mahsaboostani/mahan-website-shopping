@@ -6,14 +6,24 @@
     :class="{ show: active }"
   >
     <div v-for="item in cart" :key="item.id">
-      <div class="px-2 d-flex justify-content-between">
-        <div>
+      <div
+        class="d-flex justify-content-between border-bottom align-items-center"
+      >
+        <div class="m-2 p-2">
           <strong>{{ item.title }}</strong>
-          <br />
-          {{ item.quantity }} x ${{ item.price }}
         </div>
+        <a @click.prevent="removeFromCart(item)" href=""
+          ><i class="bi text-dark bi-dash-lg"></i
+        ></a>
+        <span class="border p-2">{{ item.quantity }}</span>
+        <a @click.prevent="addToCart(item)" href=""
+          ><i class="bi text-dark bi-plus-lg"></i></a
+        >${{ item.price }}
+
         <div>
-          <a @click="removeFromCart(item)" href="#" class="button"> Remove</a>
+          <a @click="removeProduct(item)" href="#">
+            <i class="bi text-dark p-3 w-100 bi-trash-fill"></i
+          ></a>
         </div>
       </div>
     </div>
@@ -36,8 +46,15 @@ export default {
     },
   },
   methods: {
+    addToCart(item) {
+      console.log(this.product);
+      this.$store.dispatch("addToCart", item);
+    },
     removeFromCart(item) {
       this.$store.dispatch("removeFromCart", item);
+    },
+    removeProduct(item) {
+      this.$store.dispatch("removeProduct", item);
     },
   },
 };

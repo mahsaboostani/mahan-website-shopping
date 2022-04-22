@@ -38,6 +38,9 @@ export default createStore({
         updateLocalStorage(state.cart);
       }
     },
+    REMOVE_PRODUCT(state, product) {
+      state.cart = state.cart.filter((i) => i.id !== product.id);
+    },
     UPDATE_CART_FROM_LOCALSTORAGE(state) {
       const cart = localStorage.getItem("cart");
       if (cart) {
@@ -54,6 +57,9 @@ export default createStore({
     },
     updateCartFromLocalStorage({ commit }) {
       commit("UPDATE_CART_FROM_LOCALSTORAGE");
+    },
+    removeProduct({ commit }, product) {
+      commit("REMOVE_PRODUCT", product);
     },
   },
   modules: {},
