@@ -1,30 +1,4 @@
 <template>
-  <!--logo-->
-  <div class="container-fluid pt-2">
-    <div class="row">
-      <div class="col-md"></div>
-      <div class="col-md-6 align-items-center justify-content-right">
-        <img class="pb-2" src="../assets/logo.svg" />
-      </div>
-      <div class="col-md mr-5">
-        <ul class="d-flex flex-row justify-content-end p-2 list-unstyled p-4">
-          <li class="pr-3">
-            <img src="../assets/search.svg" alt="" />
-          </li>
-          <li class="pr-3">
-            <img src="../assets/User.svg" alt="" />
-          </li>
-          <li class="pr-3">
-            <img src="../assets/Help.svg" alt="" />
-          </li>
-          <li class="pr-3">
-            <img src="../assets/Shopping-Bag.svg" alt="" />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <!---navbar-->
 
   <nav class="navbar navbar-expand-lg fixed-bottom" id="navmenu" ref="navmenu">

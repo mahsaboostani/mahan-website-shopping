@@ -9,7 +9,7 @@
       <div class="card-body">
         <h5>{{ product.title }}</h5>
         <h5>{{ product.price }}</h5>
-        <a href="#" class="btn btn-primary">View product</a>
+        <a @click="addToCart" href="#" class="btn btn-primary">Add to cart</a>
       </div>
     </div>
   </div>
@@ -31,6 +31,12 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+  },
+  methods: {
+    addToCart() {
+      console.log(this.product);
+      this.$store.dispatch("addToCart", this.product);
+    },
   },
 };
 </script>
