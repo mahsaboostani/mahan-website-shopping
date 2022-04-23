@@ -12,16 +12,21 @@
             <img src="./assets/search.svg" alt="" />
           </li>
           <li class="pr-3">
-            <img src="./assets/User.svg" alt="" />
+            <LoginForm
+              :active="activeForm.showForm"
+              @close-modal-event="hideModal"
+            /><a href="#">
+              <img @click="showModal()" src="./assets/User.svg" alt=""
+            /></a>
           </li>
           <li class="pr-3">
             <img src="./assets/Help.svg" alt="" />
           </li>
           <li class="pr-3">
-            <a class="badge text-dark" :value="cart.length" href=""
-              ><MiniCart :active="active.showDropDown" />
+            <a class="badge text-dark" :value="cart.length" href="#"
+              ><MiniCart :active="activeCart.showDropDown" />
               <img
-                @click.prevent="viewDropDown()"
+                @click="viewDropDown()"
                 src="./assets/Shopping-Bag.svg"
                 alt=""
             /></a>
@@ -34,14 +39,17 @@
 </template>
 <script>
 import MiniCart from "@/components/MiniCart.vue";
+import LoginForm from "@/components/LoginForm.vue";
 export default {
   data() {
     return {
-      active: { showDropDown: false },
+      activeCart: { showDropDown: false },
+      activeForm: { showForm: false },
     };
   },
   components: {
     MiniCart,
+    LoginForm,
   },
   computed: {
     cart() {
@@ -53,12 +61,27 @@ export default {
   },
   methods: {
     viewDropDown() {
-      if (this.active.showDropDown === false) {
-        this.active.showDropDown = true;
+      if (this.activeCart.showDropDown === false) {
+        this.activeCart.showDropDown = true;
       } else {
-        this.active.showDropDown = false;
+        this.activeCart.showDropDown = false;
       }
+      return this.activeCart.showDropDown;
     },
+    showModal() {
+      this.activeForm.showForm = true;
+    },
+    hideModal() {
+      this.activeForm.showForm = false;
+    },
+    // viewForm() {
+    //   if (this.activeForm.showForm === false) {
+    //     this.activeForm.showForm = true;
+    //   } else {
+    //     this.activeForm.showForm = false;
+    //   }
+    //   return this.activeForm.showForm;
+    // },
   },
 };
 </script>
