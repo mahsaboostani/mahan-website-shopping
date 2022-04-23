@@ -18,8 +18,15 @@
               @logIn="enterProfile"
             /><a href="#">
               <i
+                v-if="!logged"
                 @click="showModal"
-                class="bi bi-person-fill text-dark"
+                class="bi bi-person text-dark"
+                style="font-size: 27px"
+              ></i>
+              <i
+                v-if="logged"
+                @click="showModal"
+                class="bi bi-person-check text-dark"
                 style="font-size: 27px"
               ></i
             ></a>
@@ -48,6 +55,7 @@ export default {
     return {
       activeCart: { showDropDown: false },
       activeForm: { showForm: false },
+      logged: false,
     };
   },
   components: {
@@ -77,7 +85,9 @@ export default {
     hideModal() {
       this.activeForm.showForm = false;
     },
-    enterProfile() {},
+    enterProfile() {
+      this.logged = true;
+    },
   },
 };
 </script>
