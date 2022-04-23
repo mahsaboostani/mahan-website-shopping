@@ -9,27 +9,30 @@
       <div class="col-md mr-5">
         <ul class="d-flex flex-row justify-content-end p-2 list-unstyled p-4">
           <li class="pr-3">
-            <img src="./assets/search.svg" alt="" />
+            <i class="bi bi-search text-dark" style="font-size: 27px"></i>
           </li>
           <li class="pr-3">
             <LoginForm
               :active="activeForm.showForm"
               @close-modal-event="hideModal"
+              @logIn="enterProfile"
             /><a href="#">
-              <img @click="showModal()" src="./assets/User.svg" alt=""
-            /></a>
-          </li>
-          <li class="pr-3">
-            <img src="./assets/Help.svg" alt="" />
+              <i
+                @click="showModal"
+                class="bi bi-person-fill text-dark"
+                style="font-size: 27px"
+              ></i
+            ></a>
           </li>
           <li class="pr-3">
             <a class="badge text-dark" :value="cart.length" href="#"
               ><MiniCart :active="activeCart.showDropDown" />
-              <img
-                @click="viewDropDown()"
-                src="./assets/Shopping-Bag.svg"
-                alt=""
-            /></a>
+              <i
+                @click="viewDropDown"
+                class="bi bi-cart3 text-dark"
+                style="font-size: 27px"
+              ></i
+            ></a>
           </li>
         </ul>
       </div>
@@ -74,14 +77,7 @@ export default {
     hideModal() {
       this.activeForm.showForm = false;
     },
-    // viewForm() {
-    //   if (this.activeForm.showForm === false) {
-    //     this.activeForm.showForm = true;
-    //   } else {
-    //     this.activeForm.showForm = false;
-    //   }
-    //   return this.activeForm.showForm;
-    // },
+    enterProfile() {},
   },
 };
 </script>

@@ -88,6 +88,7 @@ export default {
     onSubmit() {
       this.$toast.success("Your loged in successfuly");
       this.$emit("close-modal-event");
+      this.$emit("logIn");
       console.log("err:", this.errors);
     },
     onInvalidSubmit({ values, errors, results }) {
