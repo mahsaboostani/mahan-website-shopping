@@ -22,10 +22,12 @@
                 @click="showModal"
                 class="bi bi-person text-dark"
                 style="font-size: 27px"
-              ></i>
-              <i
+              ></i
+            ></a>
+            <Registration :activeLogged="showDropDownLog" /><a href="#"
+              ><i
                 v-if="logged"
-                @click="showModal"
+                @click="viewDropDownLogged"
                 class="bi bi-person-check text-dark"
                 style="font-size: 27px"
               ></i
@@ -50,17 +52,22 @@
 <script>
 import MiniCart from "@/components/MiniCart.vue";
 import LoginForm from "@/components/LoginForm.vue";
+import Registration from "@/components/Registration.vue";
 export default {
   data() {
     return {
       activeCart: { showDropDown: false },
       activeForm: { showForm: false },
+      showDropDownLog: false,
       logged: false,
+      name: "",
+      email: "",
     };
   },
   components: {
     MiniCart,
     LoginForm,
+    Registration,
   },
   computed: {
     cart() {
@@ -69,6 +76,10 @@ export default {
   },
   mounted() {
     this.$store.dispatch("updateCartFromLocalStorage");
+    this.$store.dispatch("updateProfileFromLocalStorage");
+    if (localStorage.name && localStorage.email && localStorage.password) {
+      this.logged = true;
+    }
   },
   methods: {
     viewDropDown() {
@@ -85,8 +96,20 @@ export default {
     hideModal() {
       this.activeForm.showForm = false;
     },
+    viewDropDownLogged() {
+      if (this.showDropDownLog === false) {
+        this.showDropDownLog = true;
+      } else {
+        this.showDropDownLog = false;
+      }
+      return this.showDropDownLog;
+    },
     enterProfile() {
       this.logged = true;
+    },
+    showName(value) {
+      this.name = value.name;
+      this.email = value.email;
     },
   },
 };

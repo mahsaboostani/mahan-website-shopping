@@ -29,12 +29,32 @@
           >
             <div class="form-group">
               <label
+                for="name"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >Name:</label
+              >
+              <Field
+                v-model="name"
+                name="name"
+                type="text"
+                placeholder="Name"
+              />
+              <ErrorMessage name="name" as="p" class="fieldError" />
+            </div>
+            <div class="form-group">
+              <label
                 for="email"
                 class="col-form-label font-weight-bold"
                 style="min-width: 90px"
                 >Email:</label
               >
-              <Field name="email" type="email" placeholder="Email" />
+              <Field
+                v-model="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+              />
               <ErrorMessage name="email" as="p" class="fieldError" />
             </div>
             <div class="form-group">
@@ -44,12 +64,21 @@
                 style="min-width: 90px"
                 >Password:</label
               >
-              <Field name="password" type="password" placeholder="Password" />
+              <Field
+                v-model="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+              />
               <ErrorMessage name="password" as="p" class="fieldError" />
             </div>
             <div class="modal-footer">
-              <button class="btn btn-secondary">Login</button>
-              <button class="btn btn-primary">Sign Up</button>
+              <div class="d-flex mr-auto">
+                <a href="#"><p class="text-dark">Forgot your password?</p></a>
+              </div>
+              <button @click="saveNameEmail" class="btn btn-dark">
+                Log in/Sign in
+              </button>
             </div>
           </Form>
         </div>
@@ -64,7 +93,7 @@ import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 export default {
   name: "LoginForm",
-  props: ["active"],
+  props: ["active", "activeLogged"],
   components: {
     Form,
     Field,
@@ -72,6 +101,7 @@ export default {
   },
   data() {
     const schema = yup.object({
+      name: yup.string().required(),
       email: yup.string().required().email(),
       password: yup.string().required().min(8),
     });
@@ -79,6 +109,9 @@ export default {
       schema,
       errors: [],
       errorCount: false,
+      name: "",
+      email: "",
+      password: "",
     };
   },
   methods: {
@@ -96,6 +129,11 @@ export default {
       console.log(values); // current form values
       console.log(errors); // a map of field names and their first error message
       console.log(results); // a detailed map of field names and their validation results
+    },
+    saveNameEmail() {
+      this.$store.dispatch("addName", this.name);
+      this.$store.dispatch("addEmail", this.email);
+      this.$store.dispatch("addPassword", this.password);
     },
   },
 };

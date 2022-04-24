@@ -2,10 +2,12 @@ import { createStore } from "vuex";
 function updateLocalStorage(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
-
 export default createStore({
   state: {
     cart: [],
+    name: "",
+    email: "",
+    password: "",
   },
   getters: {
     productQuantity: (state) => (product) => {
@@ -47,6 +49,32 @@ export default createStore({
         state.cart = JSON.parse(cart);
       }
     },
+    ADD_NAME(state, profileName) {
+      state.name = profileName;
+      localStorage.setItem("name", JSON.stringify(state.name));
+    },
+    ADD_EMAIL(state, profileEmail) {
+      state.email = profileEmail;
+      localStorage.setItem("email", JSON.stringify(state.email));
+    },
+    ADD_PASSWORD(state, profilepassword) {
+      state.password = profilepassword;
+      localStorage.setItem("password", JSON.stringify(state.password));
+    },
+    UPDATE_PROFILE_FROM_LOCALSTORAGE(state) {
+      const name = localStorage.getItem("name");
+      if (name) {
+        state.name = JSON.parse(name);
+      }
+      const email = localStorage.getItem("email");
+      if (email) {
+        state.email = JSON.parse(email);
+      }
+      const password = localStorage.getItem("password");
+      if (password) {
+        state.password = JSON.parse(password);
+      }
+    },
   },
   actions: {
     addToCart({ commit }, product) {
@@ -60,6 +88,18 @@ export default createStore({
     },
     removeProduct({ commit }, product) {
       commit("REMOVE_PRODUCT", product);
+    },
+    addName({ commit }, profileName) {
+      commit("ADD_NAME", profileName);
+    },
+    addEmail({ commit }, profileEmail) {
+      commit("ADD_EMAIL", profileEmail);
+    },
+    addPassword({ commit }, profilepassword) {
+      commit("ADD_PASSWORD", profilepassword);
+    },
+    updateProfileFromLocalStorage({ commit }) {
+      commit("UPDATE_PROFILE_FROM_LOCALSTORAGE");
     },
   },
   modules: {},
