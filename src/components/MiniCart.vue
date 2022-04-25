@@ -1,7 +1,7 @@
 <template>
   <div
-    class="dropdown-menu p-2"
-    style="min-width: 320px; right: 0; left: auto; top: 50%"
+    @click.prevent.capture.stop
+    class="p-2"
     aria-labelledby="triggerId"
     :class="{ show: active }"
   >
@@ -12,18 +12,20 @@
         <div class="m-2 p-2">
           <strong>{{ item.title }}</strong>
         </div>
-        <a @click.prevent="removeFromCart(item)" href=""
-          ><i class="bi text-dark bi-dash-lg"></i
-        ></a>
+
+        <i
+          @click.prevent="removeFromCart(item)"
+          class="bi text-dark bi-dash-lg"
+        ></i>
         <span class="border p-2">{{ item.quantity }}</span>
-        <a @click.prevent="addToCart(item)" href=""
-          ><i class="bi text-dark bi-plus-lg"></i></a
+        <i @click.prevent="addToCart(item)" class="bi text-dark bi-plus-lg"></i>
         >${{ item.price }}
 
         <div>
-          <a @click="removeProduct(item)" href="#">
-            <i class="bi text-dark p-3 w-100 bi-trash-fill"></i
-          ></a>
+          <i
+            @click="removeProduct(item)"
+            class="bi text-dark p-3 w-100 bi-trash-fill"
+          ></i>
         </div>
       </div>
     </div>
@@ -31,6 +33,11 @@
     <div class="d-flex justify-content-between">
       <span>Total: {{ totalPrice }} </span>
     </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <router-link :to="{ name: 'Basket' }">
+      <a class="text-dark m-2">Check Out</a>
+    </router-link>
   </div>
 </template>
 <script>
@@ -63,7 +70,7 @@ export default {
 };
 </script>
 <style scoped>
-.dropdown-menu .show {
+.show {
   display: block;
 }
 </style>

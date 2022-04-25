@@ -1,7 +1,7 @@
 <template>
   <div
     id="drop"
-    class="dropdown-menu p-2"
+    class="p-2"
     style="min-width: 320px; right: 0; left: auto; top: 50%"
     aria-labelledby="triggerId"
     :class="{ show: activeLogged && logged }"
@@ -12,8 +12,8 @@
       </p>
       <div class="sign row justify-content-center">
         <router-link :to="{ name: 'Dashboard' }">
-          <a class="text-dark m-2">Dashboard</a></router-link
-        >
+          <a class="text-dark m-2">Dashboard</a>
+        </router-link>
       </div>
       <div>
         <a @click="exiteAccount" class="text-dark m-2">Log Out</a>
@@ -46,7 +46,7 @@ export default {
 .show {
   display: block;
 }
-.dropdown-menu {
+/* .dropdown-menu {
   background-color: #efefef;
 }
 .dropdown-menu .sign {
@@ -55,5 +55,5 @@ export default {
 .dropdown-menu a {
   text-decoration: none;
   cursor: pointer;
-}
+} */
 </style>

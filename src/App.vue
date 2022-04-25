@@ -22,18 +22,24 @@
                 @click="showModal"
                 class="bi bi-person text-dark"
                 style="font-size: 27px"
-              ></i
-            ></a>
-            <Registration :activeLogged="showDropDownLog" /><a href="#"
-              ><i
-                v-if="logged"
-                @click="viewDropDownLogged"
-                class="bi bi-person-check text-dark"
-                style="font-size: 27px"
-              ></i
-            ></a>
+              ></i>
+            </a>
+            <CDropdown color="secondary">
+              <CDropdownToggle :caret="false">
+                <a href="#"
+                  ><i
+                    v-if="logged"
+                    @click="viewDropDownLogged"
+                    class="bi bi-person-check text-dark"
+                    style="font-size: 27px"
+                  ></i></a
+              ></CDropdownToggle>
+              <CDropdownMenu @click.prevent>
+                <Registration :activeLogged="showDropDownLog" />
+              </CDropdownMenu>
+            </CDropdown>
           </li>
-          <li class="pr-3">
+          <!-- <li class="pr-3">
             <a class="badge text-dark" :value="cart.length" href="#"
               ><MiniCart :active="activeCart.showDropDown" />
               <i
@@ -42,6 +48,21 @@
                 style="font-size: 27px"
               ></i
             ></a>
+          </li> -->
+          <li>
+            <CDropdown color="secondary">
+              <CDropdownToggle :caret="false">
+                <a class="badge text-dark" :value="cart.length" href="#">
+                  <i
+                    @click.prevent="viewDropDown"
+                    class="bi bi-cart3 text-dark"
+                    style="font-size: 27px"
+                  ></i></a
+              ></CDropdownToggle>
+              <CDropdownMenu @click.prevent>
+                <MiniCart :active="activeCart.showDropDown" />
+              </CDropdownMenu>
+            </CDropdown>
           </li>
         </ul>
       </div>
@@ -53,6 +74,11 @@
 import MiniCart from "@/components/MiniCart.vue";
 import LoginForm from "@/components/LoginForm.vue";
 import Registration from "@/components/Registration.vue";
+import {
+  CDropdown,
+  CDropdownToggle,
+  CDropdownMenu,
+} from "@coreui/bootstrap-vue";
 export default {
   data() {
     return {
@@ -67,6 +93,9 @@ export default {
     MiniCart,
     LoginForm,
     Registration,
+    CDropdown,
+    CDropdownToggle,
+    CDropdownMenu,
   },
 
   computed: {
