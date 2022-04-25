@@ -1,9 +1,10 @@
 <template>
   <div
+    id="drop"
     class="dropdown-menu p-2"
     style="min-width: 320px; right: 0; left: auto; top: 50%"
     aria-labelledby="triggerId"
-    :class="{ show: activeLogged }"
+    :class="{ show: activeLogged && logged }"
   >
     <div class="text-center">
       <p class="font-weight-bold text-light bg-danger">
@@ -14,9 +15,12 @@
           <a class="text-dark m-2">Dashboard</a></router-link
         >
       </div>
-      <div class="row justify-content-center">
-        <a class="text-dark">Log Out</a>
+      <div>
+        <a @click="exiteAccount" class="text-dark m-2">Log Out</a>
       </div>
+      <!-- <div class="row justify-content-center">
+        <a @click="exiteAccount" class="text-dark">Log Out</a>
+      </div> -->
     </div>
   </div>
 </template>
@@ -26,6 +30,14 @@ export default {
   computed: {
     name() {
       return this.$store.state.name;
+    },
+    logged() {
+      return this.$store.state.logged;
+    },
+  },
+  methods: {
+    exiteAccount() {
+      this.$store.dispatch("logOut");
     },
   },
 };

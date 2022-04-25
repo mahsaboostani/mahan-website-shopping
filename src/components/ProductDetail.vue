@@ -33,6 +33,7 @@ export default {
     addToCart() {
       console.log(this.product);
       this.$store.dispatch("addToCart", this.product);
+      this.$store.dispatch("addCategory", this.category);
     },
   },
 };

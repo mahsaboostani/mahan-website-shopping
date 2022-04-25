@@ -44,6 +44,9 @@ export default {
     totalPrice() {
       return this.$store.getters.cartTotal;
     },
+    category() {
+      return this.$store.state.category;
+    },
   },
   methods: {
     addToCart(item) {

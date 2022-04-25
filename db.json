@@ -51,49 +51,49 @@
   ],
   "men": [
     {
-      "id": 1,
+      "id": 9,
       "title": "jacket",
       "image": "1.jpeg",
       "price": "54"
     },
     {
-      "id": 2,
+      "id": 10,
       "title": "jacket",
       "image": "2.jpeg",
       "price": "54"
     },
     {
-      "id": 3,
+      "id": 11,
       "title": "jacket",
       "image": "3.jpeg",
       "price": "54$"
     },
     {
-      "id": 4,
+      "id": 12,
       "title": "jacket",
       "image": "4.jpeg",
       "price": "54$"
     },
     {
-      "id": 5,
+      "id": 13,
       "title": "jacket",
       "image": "5.jpeg",
       "price": "54$"
     },
     {
-      "id": 6,
+      "id": 14,
       "title": "jacket",
       "image": "6.jpeg",
       "price": "54"
     },
     {
-      "id": 7,
+      "id": 15,
       "title": "jacket",
       "image": "7.jpeg",
       "price": "54"
     },
     {
-      "id": 8,
+      "id": 16,
       "title": "jacket",
       "image": "8.jpeg",
       "price": "54"
@@ -101,49 +101,49 @@
   ],
   "kids": [
     {
-      "id": 1,
+      "id": 17,
       "title": "jacket",
       "image": "1.jpeg",
       "price": "54"
     },
     {
-      "id": 2,
+      "id": 18,
       "title": "jacket",
       "image": "2.jpeg",
       "price": "54"
     },
     {
-      "id": 3,
+      "id": 19,
       "title": "jacket",
       "image": "3.jpeg",
       "price": "54$"
     },
     {
-      "id": 4,
+      "id": 20,
       "title": "jacket",
       "image": "4.jpeg",
       "price": "54"
     },
     {
-      "id": 5,
+      "id": 21,
       "title": "jacket",
       "image": "5.jpeg",
       "price": "54"
     },
     {
-      "id": 6,
+      "id": 22,
       "title": "jacket",
       "image": "6.jpeg",
       "price": "54"
     },
     {
-      "id": 7,
+      "id": 23,
       "title": "jacket",
       "image": "7.jpeg",
       "price": "54"
     },
     {
-      "id": 8,
+      "id": 24,
       "title": "jacket",
       "image": "8.jpeg",
       "price": "54"
@@ -151,19 +151,19 @@
   ],
   "sale": [
     {
-      "id": 1,
+      "id": 25,
       "title": "jacket",
       "image": "1.jpeg",
       "price": "54"
     },
     {
-      "id": 2,
+      "id": 26,
       "title": "jacket",
       "image": "2.jpeg",
       "price": "54"
     },
     {
-      "id": 3,
+      "id": 27,
       "title": "jacket",
       "image": "3.jpeg",
       "price": "54"

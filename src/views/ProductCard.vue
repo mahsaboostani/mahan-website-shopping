@@ -34,8 +34,9 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log(this.product);
+      console.log(this.category);
       this.$store.dispatch("addToCart", this.product);
+      this.$store.dispatch("addCategory", this.category);
     },
   },
 };

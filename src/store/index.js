@@ -1,13 +1,16 @@
 import { createStore } from "vuex";
-function updateLocalStorage(cart) {
+function updateLocalStorage(cart, category) {
   localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("category", JSON.stringify(category));
 }
 export default createStore({
   state: {
     cart: [],
+    category: [],
     name: "",
     email: "",
     password: "",
+    logged: false,
   },
   getters: {
     productQuantity: (state) => (product) => {
@@ -27,7 +30,11 @@ export default createStore({
       } else {
         state.cart.push({ ...product, quantity: 1 });
       }
-      updateLocalStorage(state.cart);
+      updateLocalStorage(state.cart, state.category);
+    },
+    ADD_CATEGORY(state, category) {
+      state.category.push(category);
+      updateLocalStorage(state.cart, state.category);
     },
     REMOVE_FROM_CART(state, product) {
       let item = state.cart.find((i) => i.id === product.id);
@@ -37,7 +44,7 @@ export default createStore({
         } else {
           state.cart = state.cart.filter((i) => i.id !== product.id);
         }
-        updateLocalStorage(state.cart);
+        updateLocalStorage(state.cart, state.category);
       }
     },
     REMOVE_PRODUCT(state, product) {
@@ -47,6 +54,10 @@ export default createStore({
       const cart = localStorage.getItem("cart");
       if (cart) {
         state.cart = JSON.parse(cart);
+      }
+      const category = localStorage.getItem("category");
+      if (category) {
+        state.category = JSON.parse(category);
       }
     },
     ADD_NAME(state, profileName) {
@@ -75,10 +86,22 @@ export default createStore({
         state.password = JSON.parse(password);
       }
     },
+    LOGEIN(state) {
+      state.logged = true;
+    },
+    LOGEOUT(state) {
+      state.logged = false;
+      localStorage.removeItem("email");
+      localStorage.removeItem("name");
+      localStorage.removeItem("password");
+    },
   },
   actions: {
     addToCart({ commit }, product) {
       commit("ADD_TO_CART", product);
+    },
+    addCategory({ commit }, category) {
+      commit("ADD_CATEGORY", category);
     },
     removeFromCart({ commit }, product) {
       commit("REMOVE_FROM_CART", product);
@@ -100,6 +123,12 @@ export default createStore({
     },
     updateProfileFromLocalStorage({ commit }) {
       commit("UPDATE_PROFILE_FROM_LOCALSTORAGE");
+    },
+    logIn({ commit }) {
+      commit("LOGEIN");
+    },
+    logOut({ commit }) {
+      commit("LOGEOUT");
     },
   },
   modules: {},

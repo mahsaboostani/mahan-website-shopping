@@ -59,7 +59,6 @@ export default {
       activeCart: { showDropDown: false },
       activeForm: { showForm: false },
       showDropDownLog: false,
-      logged: false,
       name: "",
       email: "",
     };
@@ -69,43 +68,38 @@ export default {
     LoginForm,
     Registration,
   },
+
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+    logged() {
+      return this.$store.state.logged;
     },
   },
   mounted() {
     this.$store.dispatch("updateCartFromLocalStorage");
     this.$store.dispatch("updateProfileFromLocalStorage");
     if (localStorage.name && localStorage.email && localStorage.password) {
-      this.logged = true;
+      this.$store.dispatch("logIn");
     }
   },
   methods: {
     viewDropDown() {
-      if (this.activeCart.showDropDown === false) {
-        this.activeCart.showDropDown = true;
-      } else {
-        this.activeCart.showDropDown = false;
-      }
-      return this.activeCart.showDropDown;
+      this.activeCart.showDropDown = !this.activeCart.showDropDown;
     },
     showModal() {
       this.activeForm.showForm = true;
+      this.activeCart.showDropDown = false;
     },
     hideModal() {
       this.activeForm.showForm = false;
     },
     viewDropDownLogged() {
-      if (this.showDropDownLog === false) {
-        this.showDropDownLog = true;
-      } else {
-        this.showDropDownLog = false;
-      }
-      return this.showDropDownLog;
+      this.showDropDownLog = !this.showDropDownLog;
     },
     enterProfile() {
-      this.logged = true;
+      this.$store.dispatch("logIn");
     },
     showName(value) {
       this.name = value.name;

@@ -3,6 +3,9 @@ import HomeView from "../views/HomeView.vue";
 import ListView from "../views/ListView.vue";
 import ProductCard from "../views/ProductCard.vue";
 import Dashboard from "../views/Dashboard.vue";
+import Address from "../views/Address.vue";
+import Account from "../views/Account.vue";
+import Basket from "../views/Basket.vue";
 
 const routes = [
   {
@@ -23,10 +26,27 @@ const routes = [
     props: true,
   },
   {
-    path: "/Dashboard",
+    path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
   },
+
+  {
+    path: "/dashboard/account",
+    name: "Account",
+    component: Account,
+  },
+  {
+    path: "/dashboard/address",
+    name: "Address",
+    component: Address,
+  },
+  {
+    path: "/dashboard/basket",
+    name: "Basket",
+    component: Basket,
+  },
+
   // {
   //   path: "/about",
   //   name: "about",
