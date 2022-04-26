@@ -1,9 +1,10 @@
 <template>
   <div class="text-left">
-    <div class="row m-5">
+    <div class="row ml-5 mr-5 mt-5">
       <div class="mt-5 col-md d-flex justify-content-center">
         <Form
-          @submit="onSubmit()"
+          ref="form"
+          @submit="onSubmit"
           :validation-schema="schema"
           @invalid-submit="onInvalidSubmit"
         >
@@ -112,23 +113,13 @@
             />
             <ErrorMessage name="phoneNumber" as="p" class="fieldError" />
           </div>
-          <div class="form-group">
-            <Field
-              v-model="address.check"
-              name="check"
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-              autocomplete="off"
-            />
-            <label class="form-check-label" for="flexCheckDefault">
-              Use as my default address
-            </label>
-          </div>
 
-          <div class="modal-footer justify-content-start">
-            <button type="submit" class="btn btn-dark">Add New Address</button>
+          <div class="row ml-auto">
+            <div class="col-md d-flex justify-content-start">
+              <button type="Submit" class="btn btn-dark">
+                Add New Address
+              </button>
+            </div>
           </div>
         </Form>
       </div>
@@ -140,9 +131,11 @@
         >
           <section>
             <input
+              @change="onChange($event)"
               class="form-check-input"
               type="radio"
               name="flexRadioDefault"
+              :value="key"
               :id="key"
             />
             <label class="form-check-label" for="flexRadioDefault1">
@@ -156,11 +149,15 @@
                   <p>{{ item.addressInsideForm }}</p>
                   <p>{{ item.postalCode }}</p>
                   <p>{{ item.phoneNumber }}</p>
-                  <p v-if="address.check">default address</p>
                 </div>
               </div>
             </label>
           </section>
+        </div>
+        <div class="d-flex align-items-end mr-auto">
+          <button @click="deleteAddress" class="btn btn-dark">
+            Delete Address
+          </button>
         </div>
       </div>
     </div>
@@ -199,6 +196,7 @@ export default {
       showAddress: false,
       errors: [],
       addresses: [],
+      chooseAddress: 0,
       address: {
         name: "",
         lastName: "",
@@ -207,7 +205,7 @@ export default {
         addressInsideForm: "",
         postalCode: "",
         phoneNumber: "",
-        check: false,
+        check: "",
       },
     };
   },
@@ -216,11 +214,28 @@ export default {
       this.$toast.success("Your address added successfuly");
       this.addresses.push(this.address);
       localStorage.setItem("addresses", JSON.stringify(this.addresses));
-      if (this.address.check.checked === true) {
-        this.address.check = true;
+      const addresses = localStorage.getItem("addresses");
+      if (addresses) {
+        this.addresses = JSON.parse(addresses);
       }
-      this.$router.go();
+      this.$refs.form.resetForm();
+
+      //this.$router.go();
     },
+    onChange(event) {
+      this.chooseAddress = event.target.value;
+      console.log(this.chooseAddress);
+      localStorage.setItem(
+        "chooseAddress",
+        JSON.stringify(this.addresses[this.chooseAddress])
+      );
+    },
+    deleteAddress() {
+      console.log(this.chooseAddress);
+      this.addresses.splice(this.addresses[this.chooseAddress], 1);
+      localStorage.setItem("addresses", JSON.stringify(this.addresses));
+    },
+
     onInvalidSubmit({ values, errors, results }) {
       this.errors = Object.values(errors);
       console.log(values); // current form values
