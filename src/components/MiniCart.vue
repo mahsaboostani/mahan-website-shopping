@@ -1,43 +1,45 @@
 <template>
   <div
     @click.prevent.capture.stop
-    class="p-2"
+    class="m-3"
     aria-labelledby="triggerId"
     :class="{ show: active }"
   >
-    <div v-for="item in cart" :key="item.id">
-      <div
-        class="d-flex justify-content-between border-bottom align-items-center"
-      >
-        <div class="m-2 p-2">
+    <div class="mb-4 border-bottom" v-for="item in cart" :key="item.id">
+      <div class="row d-flex">
+        <div class="col-md mb-2">
           <strong>{{ item.title }}</strong>
         </div>
-
-        <i
-          @click.prevent="removeFromCart(item)"
-          class="bi text-dark bi-dash-lg"
-        ></i>
-        <span class="border p-2">{{ item.quantity }}</span>
-        <i @click.prevent="addToCart(item)" class="bi text-dark bi-plus-lg"></i>
-        >${{ item.price }}
-
-        <div>
-          <i
-            @click="removeProduct(item)"
-            class="bi text-dark p-3 w-100 bi-trash-fill"
-          ></i>
+        <div class="col-md">
+          <strong>${{ item.price }}</strong>
         </div>
       </div>
+      <div class="d-flex">
+        <i
+          @click.prevent="removeFromCart(item)"
+          class="bi text-dark bi-dash-lg mr-4"
+        ></i>
+
+        <span class="mr-4">{{ item.quantity }}</span>
+        <i
+          @click.prevent="addToCart(item)"
+          class="bi text-dark bi-plus-lg mr-4"
+        ></i>
+
+        <i
+          @click="removeProduct(item)"
+          class="bi text-dark bi-trash-fill mr-4"
+        ></i>
+      </div>
     </div>
-    <hr />
-    <div class="d-flex justify-content-between">
-      <span>Total: {{ totalPrice }} </span>
+    <div class="d-flex justify-content-between mr-2">
+      <p><span class="font-weight-bold">Total: </span>{{ totalPrice }}</p>
     </div>
   </div>
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between m-3">
     <router-link :to="{ name: 'Basket' }">
-      <a class="text-dark m-2">Check Out</a>
-    </router-link>
+      <span><a class="btn btn-dark" href="#">Check Out</a> </span></router-link
+    >
   </div>
 </template>
 <script>
@@ -72,5 +74,8 @@ export default {
 <style scoped>
 .show {
   display: block;
+}
+.row {
+  align-items: center;
 }
 </style>

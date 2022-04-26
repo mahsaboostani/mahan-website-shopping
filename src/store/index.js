@@ -6,7 +6,6 @@ function updateLocalStorage(cart, category) {
 export default createStore({
   state: {
     cart: [],
-    category: [],
     name: "",
     email: "",
     password: "",
@@ -95,6 +94,16 @@ export default createStore({
       localStorage.removeItem("name");
       localStorage.removeItem("password");
     },
+    // ADD_ADDRESS(state, address) {
+    //   state.addresses.push(address);
+    //   localStorage.setItem("addresses", JSON.stringify(state.addresses));
+    // },
+    // UPDATE_ADDRESS(state) {
+    //   const addresses = localStorage.getItem("addresses");
+    //   if (addresses) {
+    //     state.addresses = JSON.parse(addresses);
+    //   }
+    // },
   },
   actions: {
     addToCart({ commit }, product) {
@@ -130,6 +139,12 @@ export default createStore({
     logOut({ commit }) {
       commit("LOGEOUT");
     },
+    // addAddress({ commit }, address) {
+    //   commit("ADD_ADDRESS", address);
+    // },
+    // updateAddress({ commit }) {
+    //   commit("UPDATE_ADDRESS");
+    // },
   },
   modules: {},
 });

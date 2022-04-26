@@ -12,22 +12,21 @@
             :alt="item.title"
           />
         </div>
-        <div
-          class="card-body d-flex justify-content-around align-content-center"
-        >
-          <strong>{{ item.title }}</strong>
+        <div class="card-body d-flex text-center align-content-center">
+          <strong class="mr-4 h7 font-weight-bold">{{ item.title }}</strong>
+          <p class="mr-4">${{ item.price }}</p>
 
           <a @click.prevent="removeFromCart(item)" href=""
-            ><i class="bi text-dark bi-dash-lg"></i
+            ><i class="bi text-dark bi-dash-lg mr-4"></i
           ></a>
-          <span class="border pl-2 pr-2">{{ item.quantity }}</span>
+          <span class="border-bottom pl-2 pr-2 mr-4">{{ item.quantity }}</span>
           <a @click.prevent="addToCart(item)" href=""
-            ><i class="bi text-dark bi-plus-lg"></i></a
-          >${{ item.price }}
+            ><i class="bi text-dark bi-plus-lg mr-4"></i
+          ></a>
 
           <div>
             <a @click="removeProduct(item)" href="#">
-              <i class="bi text-dark p-3 w-100 bi-trash-fill"></i
+              <i class="bi text-dark w-100 bi-trash-fill mr-4"></i
             ></a>
           </div>
         </div>
@@ -35,8 +34,13 @@
     </div>
     <hr />
   </div>
-  <div class="row">
-    <span class="h3 font-weight-bold mt-5 ml-5">Total: {{ totalPrice }} </span>
+  <div class="d-flex justify-content-start align-items-center">
+    <span class="m-5 h3 font-weight-bold">Total: {{ totalPrice }} </span>
+    <router-link :to="{ path: '/dashboard/address' }"
+      ><a class="m-5 btn btn-dark pl-5 pr-5" href="#"
+        ><p class="h5">Continue</p></a
+      ></router-link
+    >
   </div>
 </template>
 <script>
@@ -77,7 +81,6 @@ export default {
 }
 .card-body {
   margin-left: 20px;
-  width: 400px;
   justify-content: center;
 }
 </style>
