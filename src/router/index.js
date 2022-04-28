@@ -6,6 +6,7 @@ import Dashboard from "../views/Dashboard.vue";
 import Address from "../views/Address.vue";
 import Account from "../views/Account.vue";
 import Basket from "../views/Basket.vue";
+import Payment from "../views/Payment.vue";
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
     path: "/dashboard/basket",
     name: "Basket",
     component: Basket,
+  },
+  {
+    path: "/product/payment",
+    name: "Payment",
+    component: Payment,
   },
 
   // {

@@ -36,7 +36,7 @@
   </div>
   <div class="d-flex justify-content-start align-items-center">
     <span class="m-5 h3 font-weight-bold">Total: {{ totalPrice }} </span>
-    <router-link :to="{ path: '/dashboard/address' }"
+    <router-link :to="{ path: '/product/payment' }"
       ><a class="m-5 btn btn-dark pl-5 pr-5" href="#"
         ><p class="h5">Continue</p></a
       ></router-link
