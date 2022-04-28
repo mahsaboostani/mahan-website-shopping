@@ -3,7 +3,7 @@
     <router-link
       :to="{
         name: 'ProductCard',
-        params: { id: product.id, category: this.category },
+        params: { id: product.id, category: category },
       }"
     >
       <div class="card d-flex flex-sm-wrap p-1">
@@ -29,11 +29,20 @@
 export default {
   props: ["product", "category"],
   name: "ProductDetail",
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+  },
+
   methods: {
     addToCart() {
+      let item = this.cart.find((i) => i.id === this.product.id);
+      if (!item) {
+        this.$store.dispatch("addCategory", this.category);
+      }
       console.log(this.product);
       this.$store.dispatch("addToCart", this.product);
-      this.$store.dispatch("addCategory", this.category);
     },
   },
 };

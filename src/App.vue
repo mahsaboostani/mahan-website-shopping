@@ -9,7 +9,9 @@
       <div class="col-md mr-5">
         <ul class="d-flex justify-content-end list-unstyled align-items-center">
           <li>
-            <i class="bi bi-search text-dark" style="font-size: 25px"></i>
+            <router-link :to="{ name: 'Search' }"
+              ><i class="bi bi-search text-dark" style="font-size: 25px"></i
+            ></router-link>
           </li>
           <li>
             <LoginForm
@@ -53,10 +55,10 @@
           </li> -->
           <li>
             <CDropdown color="secondary">
-              <CDropdownToggle :caret="false" size="lg">
+              <CDropdownToggle :caret="false">
                 <a class="badge text-dark" :value="cart.length" href="#">
                   <i
-                    @click.prevent="viewDropDown"
+                    @click="viewDropDown"
                     class="bi bi-cart3 text-dark"
                     style="font-size: 27px"
                   ></i></a

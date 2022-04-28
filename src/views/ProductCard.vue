@@ -34,9 +34,12 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log(this.category);
+      let item = this.cart.find((i) => i.id === this.product.id);
+      if (!item) {
+        this.$store.dispatch("addCategory", this.category);
+      }
+      console.log(this.product);
       this.$store.dispatch("addToCart", this.product);
-      this.$store.dispatch("addCategory", this.category);
     },
   },
 };

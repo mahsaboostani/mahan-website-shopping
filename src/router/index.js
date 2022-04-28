@@ -7,6 +7,7 @@ import Address from "../views/Address.vue";
 import Account from "../views/Account.vue";
 import Basket from "../views/Basket.vue";
 import Payment from "../views/Payment.vue";
+import Search from "../views/Search.vue";
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
     path: "/product/payment",
     name: "Payment",
     component: Payment,
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
 
   // {

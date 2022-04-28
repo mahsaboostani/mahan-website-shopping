@@ -6,6 +6,7 @@ function updateLocalStorage(cart, category) {
 export default createStore({
   state: {
     cart: [],
+    category: [],
     name: "",
     email: "",
     password: "",
@@ -29,6 +30,7 @@ export default createStore({
       } else {
         state.cart.push({ ...product, quantity: 1 });
       }
+
       updateLocalStorage(state.cart, state.category);
     },
     ADD_CATEGORY(state, category) {
@@ -37,17 +39,25 @@ export default createStore({
     },
     REMOVE_FROM_CART(state, product) {
       let item = state.cart.find((i) => i.id === product.id);
+      let index = state.cart.indexOf(product);
       if (item) {
         if (item.quantity > 1) {
           item.quantity--;
         } else {
           state.cart = state.cart.filter((i) => i.id !== product.id);
+          state.category.splice(index, 1);
+          console.log(index);
         }
+
         updateLocalStorage(state.cart, state.category);
       }
     },
     REMOVE_PRODUCT(state, product) {
+      let index = state.cart.indexOf(product);
       state.cart = state.cart.filter((i) => i.id !== product.id);
+      state.category.splice(index, 1);
+      console.log(index);
+      updateLocalStorage(state.cart, state.category);
     },
     UPDATE_CART_FROM_LOCALSTORAGE(state) {
       const cart = localStorage.getItem("cart");

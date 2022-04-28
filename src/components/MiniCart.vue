@@ -1,10 +1,5 @@
 <template>
-  <div
-    @click.prevent.capture.stop
-    class="m-3"
-    aria-labelledby="triggerId"
-    :class="{ show: active }"
-  >
+  <div class="m-3" aria-labelledby="triggerId" :class="{ show: active }">
     <div class="mb-4 border-bottom" v-for="item in cart" :key="item.id">
       <div class="row d-flex">
         <div class="col-md mb-2">
@@ -15,21 +10,18 @@
         </div>
       </div>
       <div class="d-flex">
-        <i
-          @click.prevent="removeFromCart(item)"
-          class="bi text-dark bi-dash-lg mr-4"
-        ></i>
+        <a @click.prevent.capture.stop="removeFromCart(item)" href="#"
+          ><i class="bi text-dark bi-dash-lg mr-4"></i
+        ></a>
 
         <span class="mr-4">{{ item.quantity }}</span>
-        <i
-          @click.prevent="addToCart(item)"
-          class="bi text-dark bi-plus-lg mr-4"
-        ></i>
+        <a @click.prevent.capture.stop="addToCart(item)" href="#"
+          ><i class="bi text-dark bi-plus-lg mr-4"></i
+        ></a>
 
-        <i
-          @click="removeProduct(item)"
-          class="bi text-dark bi-trash-fill mr-4"
-        ></i>
+        <a @click.prevent.capture.stop="removeProduct(item)" href="#"
+          ><i class="bi text-dark bi-trash-fill mr-4"></i
+        ></a>
       </div>
     </div>
     <div class="d-flex justify-content-between mr-2">

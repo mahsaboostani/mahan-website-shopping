@@ -9,6 +9,9 @@ export const apiClient = axios.create({
   },
 });
 export default {
+  getEventAll() {
+    return apiClient.get();
+  },
   getEvents(category) {
     return apiClient.get(category);
   },
