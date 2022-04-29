@@ -18,16 +18,6 @@
           <button @click="getProduct" class="ml-3 bg-dark text-light">
             Search
           </button>
-          <!-- Material input -->
-          <!-- <div class="md-form">
-            <input
-              placeholder="Placeholder"
-              type="text"
-              id="inputPlaceholderEx"
-              class="form-control"
-            />
-            <label for="inputPlaceholderEx">Placeholder</label>
-          </div> -->
         </div>
       </div>
     </div>
@@ -161,10 +151,17 @@ export default {
   width: 300;
   height: 800px;
 }
-/* input {
+input {
   width: 100%;
-  padding: 10px 100px;
-} */
+  padding: 0px 100px;
+
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
+}
+
 @media only screen and (max-width: 768px) {
   .card img {
     width: 350px;
@@ -172,6 +169,16 @@ export default {
   }
   select {
     height: 30px;
+  }
+  input {
+    width: 100%;
+    padding: 0px 50px;
+
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
   }
 }
 </style>
