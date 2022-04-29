@@ -6,28 +6,36 @@
         params: { id: product.id, category: category },
       }"
     >
-      <div class="card d-flex flex-sm-wrap p-1">
+      <div class="card d-flex justify-content-center pl-4 pr-4">
         <img
           class="card-img-top"
           :src="require(`@/assets/${category}/${product.image}`)"
           :alt="product.title"
         />
-        <div class="card-body">
-          <h5>{{ product.title }}</h5>
-          <h5>{{ product.price }}</h5>
-        </div>
-      </div>
-      <div>
-        <a href="#" class="btn btn-primary">View product</a>
       </div>
     </router-link>
-    <a @click="addToCart" href="#" class="btn btn-primary m-2">Add to cart</a>
+    <div class="card-body mb-5">
+      <h5 style="font-family: Playfair Display, serif">
+        {{ product.title }}
+      </h5>
+      <div class="d-flex justify-content-center">
+        <h6 :class="{ saleShow: showSale }">$ 70</h6>
+        <h6 class="text-danger" v-if="showSale">$ {{ product.price }}</h6>
+      </div>
+
+      <a
+        @click="addToCart"
+        href="#"
+        class="btn m-2 btn-dark text-light rounded-pill"
+        >Add to cart</a
+      >
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["product", "category"],
+  props: ["product", "category", "showSale"],
   name: "ProductDetail",
   computed: {
     cart() {
@@ -51,8 +59,20 @@ export default {
 .card {
   border: 0;
 }
+.card-img-top:hover {
+  border: 3px solid rgba(0, 0, 0, 0.4);
+}
 .card img {
-  width: 500px;
-  height: 800px;
+  width: 400px;
+  height: 600px;
+}
+.card-body {
+  font-family: "Arima Madurai", cursive;
+  font-family: "EB Garamond", serif;
+  font-family: "Libre Baskerville", serif;
+}
+.saleShow {
+  text-decoration-line: line-through;
+  margin-right: 25px;
 }
 </style>

@@ -46,6 +46,9 @@ export default {
 .show {
   display: block;
 }
+#drop a {
+  cursor: pointer;
+}
 /* .dropdown-menu {
   background-color: #efefef;
 }

@@ -8,32 +8,47 @@
       </div>
       <div class="col-md mr-5">
         <ul class="d-flex justify-content-end list-unstyled align-items-center">
-          <li>
+          <li class="m-2">
             <router-link :to="{ name: 'Search' }"
               ><i class="bi bi-search text-dark" style="font-size: 25px"></i
             ></router-link>
           </li>
           <li>
-            <LoginForm
-              :active="activeForm.showForm"
-              @close-modal-event="hideModal"
-              @logIn="enterProfile"
-            />
-            <i
-              v-if="!logged"
-              @click="showModal"
-              class="bi bi-person text-dark"
-              style="font-size: 30px"
-            ></i>
-            <CDropdown color="secondary">
-              <CDropdownToggle
-                style="max-width: 30px"
-                :caret="false"
-                variant="ghost"
-              >
+            <CButton
+              color="primary"
+              @click="
+                () => {
+                  activeForm.showForm = true;
+                }
+              "
+            >
+              <i
+                v-if="!logged"
+                class="bi bi-person text-dark"
+                style="font-size: 30px"
+              ></i
+            ></CButton>
+            <CModal
+              :visible="activeForm.showForm"
+              @close="
+                () => {
+                  activeForm.showForm = false;
+                }
+              "
+            >
+              <CModalBody>
+                <LoginForm
+                  :active="activeForm.showForm"
+                  @close-modal-event="hideModal"
+                  @logIn="enterProfile"
+                />
+              </CModalBody>
+            </CModal>
+
+            <CDropdown v-if="logged" color="secondary">
+              <CDropdownToggle :caret="false" variant="ghost">
                 <i
                   v-if="logged"
-                  @click="viewDropDownLogged"
                   class="bi bi-person-check text-dark"
                   style="font-size: 30px"
                 ></i
@@ -43,16 +58,6 @@
               </CDropdownMenu>
             </CDropdown>
           </li>
-          <!-- <li class="pr-3">
-            <a class="badge text-dark" :value="cart.length" href="#"
-              ><MiniCart :active="activeCart.showDropDown" />
-              <i
-                @click="viewDropDown"
-                class="bi bi-cart3 text-dark"
-                style="font-size: 27px"
-              ></i
-            ></a>
-          </li> -->
           <li>
             <CDropdown color="secondary">
               <CDropdownToggle :caret="false">
@@ -91,6 +96,8 @@ import {
   CDropdown,
   CDropdownToggle,
   CDropdownMenu,
+  CModal,
+  CModalBody,
 } from "@coreui/bootstrap-vue";
 export default {
   data() {
@@ -98,6 +105,7 @@ export default {
       activeCart: { showDropDown: false },
       activeForm: { showForm: false },
       showDropDownLog: false,
+      visibleLiveDemo: false,
       name: "",
       email: "",
     };
@@ -109,6 +117,10 @@ export default {
     CDropdown,
     CDropdownToggle,
     CDropdownMenu,
+
+    CModal,
+
+    CModalBody,
   },
 
   computed: {
@@ -153,7 +165,8 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Libre Bodoni", serif;
+  // font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -185,10 +198,24 @@ nav {
   top: -10px;
   opacity: 0.9;
 }
-.badge {
-  width: 30px;
+.btn-group {
+  width: 45px;
 }
-.container-fluid li {
-  margin: 5px;
+.btn-group .btn {
+  padding-left: 0px;
+  padding-right: 0px;
+  border: 0px;
 }
+// @media only screen and (max-width: 768px) {
+//   img {
+//     width: 300px;
+//     height: 150px;
+//   }
+//   .col-md ul {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center !important;
+//     margin-right: 0px !important;
+//   }
+// }
 </style>

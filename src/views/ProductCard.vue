@@ -1,17 +1,37 @@
 <template>
-  <div v-if="product">
-    <div class="card col-md-5 text-center">
+  <div class="row d-flex align-items-center m-5" v-if="product">
+    <div class="col-md">
       <img
         class="card-img-top"
         :src="require(`@/assets/${category}/${product.image}`)"
         :alt="product.title"
       />
-      <div class="card-body">
-        <h5>{{ product.title }}</h5>
-        <h5>{{ product.price }}</h5>
-        <a @click="addToCart" href="#" class="btn btn-primary">Add to cart</a>
-      </div>
     </div>
+
+    <div class="col-md-3 text-left">
+      <h5 class="mb-3" style="font-family: Playfair Display, serif">
+        {{ product.title }}
+      </h5>
+      <div class="mb-4">
+        <h5>$ {{ product.price }}</h5>
+      </div>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          expedita quis tempora cum magnam repellendus voluptas ab nesciunt
+          quam, quia aperiam cumque veritatis placeat doloremque tempore et
+          tenetur. Molestias, debitis.
+        </p>
+      </div>
+
+      <a
+        @click="addToCart"
+        href="#"
+        class="btn m-2 btn-dark text-light rounded-pill"
+        >Add to cart</a
+      >
+    </div>
+    <div class="col-md"></div>
   </div>
 </template>
 <script>
@@ -44,3 +64,17 @@ export default {
   },
 };
 </script>
+<style scoped>
+.card {
+  border: 0;
+}
+img {
+  width: 550px;
+  height: 750px;
+}
+.card-body {
+  font-family: "Arima Madurai", cursive;
+  font-family: "EB Garamond", serif;
+  font-family: "Libre Baskerville", serif;
+}
+</style>

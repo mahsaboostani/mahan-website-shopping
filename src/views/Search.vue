@@ -88,6 +88,8 @@ export default {
 
   methods: {
     async getProduct() {
+      this.result = false;
+
       let sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
       this.showLoading = true;
       await sleep(4000);

@@ -1,11 +1,13 @@
 <template>
   <!---navbar-->
 
-  <nav class="navbar navbar-expand-lg fixed-bottom" id="navmenu" ref="navmenu">
+  <nav class="navbar navbar-expand fixed-bottom" id="navmenu" ref="navmenu">
     <div class="container align-items-center justify-content-center pb-5 pt-0">
       <ul id="myMenu" class="navbar-nav">
         <li data-menuanchor="women" class="nav-item pr-4">
-          <a class="nav-link" href="#women">Mahan women</a>
+          <a class="nav-link active" aria-current="page" href="#women"
+            >Mahan women</a
+          >
         </li>
         <li data-menuanchor="men" class="nav-item pr-4">
           <a class="nav-link" href="#men">Mahan men</a>
