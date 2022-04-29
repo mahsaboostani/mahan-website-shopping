@@ -2,7 +2,6 @@
   <div
     id="drop"
     class="p-2"
-    style="min-width: 320px; right: 0; left: auto; top: 50%"
     aria-labelledby="triggerId"
     :class="{ show: activeLogged && logged }"
   >
@@ -49,6 +48,12 @@ export default {
 #drop a {
   cursor: pointer;
 }
+#drop {
+  min-width: 320px;
+  right: 0;
+  left: auto;
+  top: 50%;
+}
 /* .dropdown-menu {
   background-color: #efefef;
 }
@@ -59,4 +64,12 @@ export default {
   text-decoration: none;
   cursor: pointer;
 } */
+@media only screen and (max-width: 768px) {
+  div p {
+    font-size: 13px;
+  }
+  #drop {
+    min-width: 0px !important;
+  }
+}
 </style>

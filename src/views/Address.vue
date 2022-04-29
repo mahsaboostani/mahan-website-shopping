@@ -1,7 +1,7 @@
 <template>
   <div class="text-left">
     <div class="row ml-5 mr-5 mt-5">
-      <div class="mt-5 col-md d-flex justify-content-center">
+      <div class="mt-5 col-md-6 d-flex justify-content-center">
         <Form
           ref="form"
           @submit="onSubmit"
@@ -123,6 +123,7 @@
           </div>
         </Form>
       </div>
+
       <div class="col-md mt-5 d-flex ml-auto">
         <div
           v-for="(item, key) in addresses"
@@ -154,11 +155,9 @@
             </label>
           </section>
         </div>
-        <div class="d-flex align-items-end mr-auto">
-          <button @click="deleteAddress" class="btn btn-dark">
-            Delete Address
-          </button>
-        </div>
+      </div>
+      <div class="col-md d-flex align-items-end">
+        <button @click="deleteAddress" class="btn btn-dark">Delete</button>
       </div>
     </div>
   </div>
@@ -272,5 +271,10 @@ export default {
 }
 .border-3 {
   border-width: 3px !important;
+}
+@media only screen and (max-width: 768px) {
+  .col-md {
+    display: block !important;
+  }
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="mt-5">
+  <div>
     <div class="text-left">
       <div class="text-left">
-        <div class="row m-2 p-5">
+        <div class="row p-5">
           <div class="mt-5 col-md d-flex justify-content-start">
             <Form
               ref="form"
@@ -167,7 +167,7 @@
       <div class="m-5 pt-5 font-weight-bold">
         <h4>CHOOSE A PAYMENT METHOD</h4>
       </div>
-      <div class="row m-5">
+      <div class="paymentOption row m-5">
         <div class="col-md flex-grow-0">
           <a @click="payment" href="#">
             <img class="border border-3" src="../assets/master.png" alt="" />
@@ -318,5 +318,22 @@ img:hover {
 }
 .modal-footer {
   border: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .col-md {
+    display: block !important;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .col-md img {
+    width: 60px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  .paymentOption {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+  }
 }
 </style>

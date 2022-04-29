@@ -145,4 +145,21 @@ export default {
   color: crimson;
   font-size: 12px;
 }
+@media only screen and (max-width: 768px) {
+  div h5 {
+    font-size: 13px;
+  }
+  label {
+    font-size: 13px;
+  }
+  div p {
+    font-size: 13px;
+  }
+  .btn {
+    font-size: 13px;
+  }
+  .modal-content {
+    line-height: 6px !important;
+  }
+}
 </style>

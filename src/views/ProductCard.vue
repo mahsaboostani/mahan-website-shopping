@@ -1,5 +1,5 @@
 <template>
-  <div class="row d-flex align-items-center m-5" v-if="product">
+  <div class="row d-flex align-items-center" v-if="product">
     <div class="col-md">
       <img
         class="card-img-top"
@@ -8,7 +8,7 @@
       />
     </div>
 
-    <div class="col-md-3 text-left">
+    <div class="col-md-3 text-left m-5">
       <h5 class="mb-3" style="font-family: Playfair Display, serif">
         {{ product.title }}
       </h5>
@@ -69,6 +69,7 @@ export default {
   border: 0;
 }
 img {
+  margin: 30px;
   width: 550px;
   height: 750px;
 }
@@ -76,5 +77,11 @@ img {
   font-family: "Arima Madurai", cursive;
   font-family: "EB Garamond", serif;
   font-family: "Libre Baskerville", serif;
+}
+@media only screen and (max-width: 768px) {
+  img {
+    width: 350px !important;
+    height: 500px !important;
+  }
 }
 </style>

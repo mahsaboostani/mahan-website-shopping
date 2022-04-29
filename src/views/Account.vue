@@ -141,4 +141,26 @@ a {
 .row {
   margin-top: 100px;
 }
+@media only screen and (max-width: 768px) {
+  div h1 {
+    font-size: 25px;
+  }
+  div h5 {
+    font-size: 13px;
+  }
+  div .btn {
+    font-size: 13px;
+  }
+  .row {
+    margin-top: 20px !important;
+    display: block !important;
+  }
+  .col-md {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+  .option {
+    margin-bottom: 0px;
+  }
+}
 </style>

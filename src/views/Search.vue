@@ -8,27 +8,36 @@
           <option>men</option>
           <option>kids</option>
         </select>
-        <div class="ml-5">
-          <label class="font-weight-bold mr-2" for="">Product:</label>
+        <div class="d-flex justify-content-center ml-4">
           <input
             @click="hideProduct"
             type="text"
             v-model="search"
-            placeholder="jacket,jeans,..."
+            placeholder="Product: jacket,jeans,..."
           />
           <button @click="getProduct" class="ml-3 bg-dark text-light">
             Search
           </button>
+          <!-- Material input -->
+          <!-- <div class="md-form">
+            <input
+              placeholder="Placeholder"
+              type="text"
+              id="inputPlaceholderEx"
+              class="form-control"
+            />
+            <label for="inputPlaceholderEx">Placeholder</label>
+          </div> -->
         </div>
       </div>
     </div>
-    <div class="row d-flex justify-content-start text-center">
-      <div v-show="showLoading" class="spinner-border m-5" role="status">
+    <div class="row d-flex align-items-center mt-5">
+      <div v-show="showLoading" class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
       </div>
     </div>
 
-    <div class="row" v-if="showProducts">
+    <div class="row mt-5" v-if="showProducts">
       <ProductDetail
         v-for="item in searchProd"
         :key="item.id"
@@ -151,5 +160,18 @@ export default {
 .col {
   width: 300;
   height: 800px;
+}
+/* input {
+  width: 100%;
+  padding: 10px 100px;
+} */
+@media only screen and (max-width: 768px) {
+  .card img {
+    width: 350px;
+    height: 550px;
+  }
+  select {
+    height: 30px;
+  }
 }
 </style>

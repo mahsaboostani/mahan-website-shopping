@@ -30,7 +30,7 @@
     <section class="section" data-anchor="women">
       <div class="container">
         <router-link :to="{ name: 'ListView', params: { category: 'women' } }"
-          ><img class="img-fluid" src="../assets/women.svg" alt=""
+          ><img class="img" src="../assets/women.svg" alt=""
         /></router-link>
       </div>
     </section>
@@ -39,7 +39,7 @@
     <section class="section" data-anchor="men">
       <div class="container">
         <router-link :to="{ name: 'ListView', params: { category: 'men' } }"
-          ><img class="img-fluid" src="../assets/men.svg" alt=""
+          ><img class="img" src="../assets/men.svg" alt=""
         /></router-link>
       </div>
     </section>
@@ -48,7 +48,7 @@
     <section class="section" data-anchor="kids">
       <div class="container">
         <router-link :to="{ name: 'ListView', params: { category: 'kids' } }"
-          ><img class="img-fluid" src="../assets/kids.svg" alt=""
+          ><img class="img" src="../assets/kids.svg" alt=""
         /></router-link>
       </div>
     </section>
@@ -58,7 +58,7 @@
       <div class="container">
         <a class="mylink" href="#">
           <router-link :to="{ name: 'ListView', params: { category: 'sale' } }"
-            ><img class="img-fluid" src="../assets/sale.svg" alt=""
+            ><img class="img" src="../assets/sale.svg" alt=""
           /></router-link>
         </a>
       </div>
@@ -66,7 +66,7 @@
 
     <!---contact us-->
     <section class="section" data-anchor="contact">
-      <div class="container text-left">
+      <div class="container-fluid text-left">
         <div class="row">
           <div class="col-md">
             <h3>About us</h3>
@@ -187,5 +187,26 @@ section img {
 }
 .hide {
   display: none;
+}
+@media only screen and (max-width: 768px) {
+  .navbar .nav-item {
+    padding-right: 0px !important;
+    font-size: 10px;
+  }
+  section img {
+    float: right;
+
+    min-height: 100%;
+    height: 300px !important;
+  }
+  .section .container {
+    padding: 0px !important;
+  }
+  .section .container-fluid {
+    font-size: 10px;
+  }
+  .section .container-fluid .bi {
+    font-size: 17px !important;
+  }
 }
 </style>

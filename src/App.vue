@@ -6,8 +6,10 @@
       <div class="col-md-6 align-items-center justify-content-right">
         <img class="pb-2" src="./assets/logo.svg" />
       </div>
-      <div class="col-md mr-5">
-        <ul class="d-flex justify-content-end list-unstyled align-items-center">
+      <div class="col-md">
+        <ul
+          class="d-flex justify-content-end list-unstyled align-items-center mr-5"
+        >
           <li class="m-2">
             <router-link :to="{ name: 'Search' }"
               ><i class="bi bi-search text-dark" style="font-size: 25px"></i
@@ -206,16 +208,29 @@ nav {
   padding-right: 0px;
   border: 0px;
 }
-// @media only screen and (max-width: 768px) {
-//   img {
-//     width: 300px;
-//     height: 150px;
-//   }
-//   .col-md ul {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center !important;
-//     margin-right: 0px !important;
-//   }
-// }
+@media only screen and (max-width: 768px) {
+  .container-fluid img {
+    width: 300px;
+    height: 150px;
+  }
+  .col-md ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    margin-right: 0px !important;
+  }
+  .col-md .bi {
+    font-size: 25px !important;
+  }
+  .dropdown-menu {
+    width: 200px;
+  }
+  .modal-dialog {
+    width: 300px !important;
+    height: 350px !important;
+  }
+  .modal-body {
+    padding: 0px !important;
+  }
+}
 </style>

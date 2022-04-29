@@ -2,8 +2,8 @@
   <div>
     <h3></h3>
   </div>
-  <div class="row m-5">
-    <div class="col-md w-100" v-for="(item, key) in cart" :key="item.index">
+  <div class="row">
+    <div class="col-md" v-for="(item, key) in cart" :key="item.index">
       <div class="card d-flex justify-content-between">
         <div>
           <img
@@ -80,7 +80,32 @@ export default {
   width: 400px;
 }
 .card-body {
-  margin-left: 20px;
+  margin-left: 10px;
   justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .card img {
+    width: 350px;
+    height: 550px;
+  }
+  .row {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .card-body {
+    align-content: center !important;
+  }
+  div .bi {
+    font-size: 15px !important;
+  }
+  div strong {
+    font-size: 11px !important;
+  }
+  div p {
+    font-size: 13px !important;
+  }
+  div span {
+    font-size: 13px !important;
+  }
 }
 </style>

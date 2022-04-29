@@ -5,7 +5,7 @@
         <div class="col-md mb-2">
           <strong>{{ item.title }}</strong>
         </div>
-        <div class="col-md">
+        <div class="col-md mb-2">
           <strong>${{ item.price }}</strong>
         </div>
       </div>
@@ -69,5 +69,22 @@ export default {
 }
 .row {
   align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  div .bi {
+    font-size: 15px !important;
+  }
+  div strong {
+    font-size: 11px !important;
+  }
+  div p {
+    font-size: 13px !important;
+  }
+  div span {
+    font-size: 13px !important;
+  }
+  div {
+    line-height: 10px;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="option">
-      <div class="row">
+      <div class="row mt-5">
         <div class="col-md mr-5 text-left justify-content-end">
           <div>
             <h4>{{ name }}</h4>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="option">
-      <div class="row">
+      <div class="row d-flex align-items-center">
         <div class="col-md mr-5 text-left justify-content-end">
           <div>
             <h4>Account</h4>
@@ -83,5 +83,19 @@ export default {
 <style scoped>
 .option {
   margin: 100px;
+}
+@media only screen and (max-width: 768px) {
+  .option {
+    margin: 0px 0px 20px 0px !important;
+  }
+  .col-md {
+    width: 150px;
+  }
+  div {
+    font-size: 13px !important;
+  }
+  div h4 {
+    font-size: 20px !important;
+  }
 }
 </style>
