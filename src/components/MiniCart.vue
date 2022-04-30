@@ -67,14 +67,4 @@ export default {
 .show {
   display: block;
 }
-/* 
-.row {
-  align-items: center;
-}
-*/
-/* @media only screen and (max-width: 768px) {
-  div h6 {
-    font-size: 10px !important;
-  }
-} */
 </style>

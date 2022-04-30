@@ -50,32 +50,4 @@ export default {
 .show {
   display: block;
 }
-
-/* #drop a {
-  cursor: pointer;
-}
-#drop {
-  min-width: 320px;
-  right: 0;
-  left: auto;
-  top: 50%;
-} */
-/* .dropdown-menu {
-  background-color: #efefef;
-}
-.dropdown-menu .sign {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.dropdown-menu a {
-  text-decoration: none;
-  cursor: pointer;
-} */
-/* @media only screen and (max-width: 768px) {
-  div p {
-    font-size: 13px;
-  }
-  #drop {
-    min-width: none !important;
-  }
-} */
 </style>

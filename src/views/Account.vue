@@ -130,46 +130,7 @@ export default {
 .show {
   display: block;
 }
-/* .fieldError {
-  color: crimson;
-  font-size: 12px;
+.row h5:hover {
+  color: blueviolet;
 }
-.title {
-  margin-bottom: 20px;
-}
-.col-md {
-  margin-top: 90px;
-  margin-bottom: 90px;
-}
-.option {
-  margin-bottom: 30px;
-}
-a {
-  margin-top: 10px;
-}
-.row {
-  margin-top: 100px;
-}
-@media only screen and (max-width: 768px) {
-  div h1 {
-    font-size: 25px;
-  }
-  div h5 {
-    font-size: 13px;
-  }
-  div .btn {
-    font-size: 13px;
-  }
-  .row {
-    margin-top: 20px !important;
-    display: block !important;
-  }
-  .col-md {
-    margin-top: 40px !important;
-    margin-bottom: 40px !important;
-  }
-  .option {
-    margin-bottom: 0px;
-  }
-} */
 </style>

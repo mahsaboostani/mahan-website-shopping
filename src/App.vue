@@ -1,22 +1,23 @@
 <template>
   <!--logo-->
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 w-100 justify-content-center">
-        <img src="@/assets/logo.svg" alt="#" />
-        <!-- <h1
+    <div class="row" id="header">
+      <div class="col-md"></div>
+      <div class="col-md-6 justify-content-center">
+        <h1
+          class="mahan"
           style="
             font-family: Megrim, cursive;
             font-weight: bold;
-            font-size: 160px;
+            font-size: 7rem;
           "
         >
           mahan
-        </h1> -->
+        </h1>
       </div>
-      <div class="col-md">
+      <div class="col-md me-5 mt-3">
         <ul
-          class="d-flex justify-content-center list-unstyled align-items-center m-3 justify-content-md-end"
+          class="d-flex justify-content-center list-unstyled align-items-center justify-content-md-end"
         >
           <li class="p-1">
             <router-link :to="{ name: 'Search' }"
@@ -205,37 +206,12 @@ nav {
   top: -10px;
   opacity: 0.9;
 }
-// .btn-group {
-//   width: 45px;
-// }
-// .btn-group .btn {
-//   padding-left: 0px;
-//   padding-right: 0px;
-//   border: 0px;
-// }
-// @media only screen and (max-width: 768px) {
-//   .container-fluid img {
-//     width: 300px;
-//     height: 150px;
-//   }
-//   .col-md ul {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center !important;
-//     margin-right: 0px !important;
-//   }
-//   .col-md .bi {
-//     font-size: 25px !important;
-//   }
-//   .dropdown-menu {
-//     width: 200px;
-//   }
-//   .modal-dialog {
-//     width: 300px !important;
-//     height: 350px !important;
-//   }
-//   .modal-body {
-//     padding: 0px !important;
-//   }
-// }
+@media only screen and (max-width: 768px) {
+  .container-fluid .row {
+    position: static !important;
+  }
+  .container-fluid .mahan {
+    font-size: 3rem !important;
+  }
+}
 </style>

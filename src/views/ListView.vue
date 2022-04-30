@@ -39,13 +39,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-/* .row {
-  border: 0;
-}
-@media only screen and (max-width: 768px) {
-  .row {
-    margin: 0px !important;
-  }
-} */
-</style>

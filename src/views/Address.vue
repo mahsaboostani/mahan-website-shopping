@@ -273,30 +273,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-/* .fieldError {
-  color: crimson;
-  font-size: 12px;
-}
-.show {
-  display: block;
-}
-.dropdown-menu {
-  background-color: #efefef;
-}
-.dropdown-menu a {
-  text-decoration: none;
-  cursor: pointer;
-}
-.modal-footer {
-  border: 0px;
-}
-.border-3 {
-  border-width: 3px !important;
-}
-@media only screen and (max-width: 768px) {
-  .col-md {
-    display: block !important;
-  }
-} */
-</style>

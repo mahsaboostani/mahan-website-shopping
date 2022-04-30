@@ -35,8 +35,8 @@
   <div class="d-flex justify-content-start align-items-center">
     <span class="m-5 h3 font-weight-bold">Total: {{ totalPrice }} </span>
     <router-link :to="{ path: '/product/payment' }"
-      ><a class="m-5 btn btn-dark pe-5 ps-5" href="#"
-        ><p class="h5">Continue</p></a
+      ><a class="m-5 btn btn-dark" href="#"
+        ><p class="h5 p-1">Continue</p></a
       ></router-link
     >
   </div>
@@ -68,41 +68,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-/* .card {
-  border: 0;
-  border-bottom: 0px;
-}
-.card img {
-  height: 500px;
-  width: 400px;
-}
-.card-body {
-  justify-content: center;
-}
-@media only screen and (max-width: 768px) {
-  .card img {
-    width: 350px;
-    height: 550px;
-  }
-  .row {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .card-body {
-    align-content: center !important;
-  }
-  div .bi {
-    font-size: 15px !important;
-  }
-  div strong {
-    font-size: 11px !important;
-  }
-  div p {
-    font-size: 13px !important;
-  }
-  div span {
-    font-size: 13px !important;
-  }
-} */
-</style>

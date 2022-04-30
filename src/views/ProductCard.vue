@@ -69,23 +69,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-/* .card-body {
-  font-family: "Arima Madurai", cursive;
-  font-family: "EB Garamond", serif;
-  font-family: "Libre Baskerville", serif;
-} */
-/* .card {
-  border: 0;
-}
-
-
-@media only screen and (max-width: 768px) {
-  img {
-    width: 90% !important;
-    height: 500px !important;
-    margin: auto;
-    object-fit: cover;
-  }
-} */
-</style>

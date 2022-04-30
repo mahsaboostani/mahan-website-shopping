@@ -33,11 +33,7 @@
     <section class="section d-block" data-anchor="women">
       <div class="container">
         <router-link :to="{ name: 'ListView', params: { category: 'women' } }">
-          <img
-            class="img float-md-left float-right"
-            src="../assets/women.svg"
-            alt=""
-          />
+          <img class="img" src="../assets/women.svg" alt="" />
         </router-link>
       </div>
     </section>
@@ -174,56 +170,32 @@ export default {
         }
       },
     });
+    window.document.getElementById("header").classList.add("fixed-top");
   },
   unmounted() {
     this.fullpage_api.destroy("all");
+    window.document.getElementById("header").classList.remove("fixed-top");
   },
 };
 </script>
 
 <style scoped>
-h6 {
-  font-size: 0.5rem;
+#fullpage {
+  margin-top: 9rem;
 }
-/* 
-
-
-.hide {
-  display: none;
-}
-{
-  .navbar .nav-item {
-    padding-right: 0px !important;
-    font-size: 10px;
-  }
-  section img {
-    float: right;
-
-    min-height: 100%;
-    height: 300px !important;
-  }
-  .section .container {
-    padding: 0px !important;
-  }
-  .section .container-fluid {
-    font-size: 10px;
-  }
-  .section .container-fluid .bi {
-    font-size: 17px !important;
-  }
-} */
 section img {
   height: 70vh;
 }
 .active a {
   color: red !important;
 }
-/* .fp-table {
-  display: block;
-} */
+
 @media only screen and (max-width: 768px) {
   section img {
     float: right;
+  }
+  #fullpage {
+    margin-top: 0rem !important;
   }
 }
 </style>

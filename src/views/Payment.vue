@@ -145,7 +145,7 @@
           </Form>
         </div>
 
-        <div class="col-md d-sm-block d-md-flex ms-5">
+        <div class="col-md d-sm-block d-md-flex ms-md-5">
           <div
             v-for="(item, key) in addresses"
             :key="item.index"
@@ -185,7 +185,7 @@
     </div>
     <div class="paymentOption row d-sm-block m-4 d-md-flex">
       <div class="col-md"></div>
-      <div class="col-md w-50 m-2">
+      <div class="col-md m-2">
         <a @click="payment" href="#">
           <img
             class="border border-2 w-100"
@@ -194,7 +194,7 @@
           />
         </a>
       </div>
-      <div class="col-md w-50 m-2">
+      <div class="col-md m-2">
         <a @click="payment" href="#">
           <img
             class="border border-2 w-100"
@@ -203,7 +203,7 @@
           />
         </a>
       </div>
-      <div class="col-md w-50 m-2">
+      <div class="col-md m-2">
         <a @click="payment" href="#">
           <img
             class="border border-2 w-100"
@@ -212,7 +212,7 @@
           />
         </a>
       </div>
-      <div class="col-md w-50 m-2">
+      <div class="col-md m-2">
         <a @click="payment" href="#">
           <img class="border border-2 w-100" src="../assets/visa.jpg" alt="" />
         </a>
@@ -319,47 +319,4 @@ export default {
 img:hover {
   transform: translateY(-10px);
 }
-/* .col-md img {
-  width: 250px;
-  height: 150px;
-}
-
-.border-3 {
-  border-width: 3px !important;
-  border-radius: 20px;
-}
-.fieldError {
-  color: crimson;
-  font-size: 12px;
-}
-.show {
-  display: block;
-}
-.dropdown-menu {
-  background-color: #efefef;
-}
-.dropdown-menu a {
-  text-decoration: none;
-  cursor: pointer;
-}
-.modal-footer {
-  border: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .col-md {
-    display: block !important;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .col-md img {
-    width: 60px;
-    height: 40px;
-    margin-bottom: 20px;
-  }
-  .paymentOption {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap;
-  }
-} */
 </style>

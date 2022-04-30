@@ -90,19 +90,4 @@ export default {
 .option {
   margin: 5rem;
 }
-/*
-@media only screen and (max-width: 768px) {
-  .option {
-    margin: 0px 0px 20px 0px !important;
-  }
-  .col-md {
-    width: 150px;
-  }
-  div {
-    font-size: 13px !important;
-  }
-  div h4 {
-    font-size: 20px !important;
-  }
-} */
 </style>

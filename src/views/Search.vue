@@ -152,29 +152,4 @@ input {
 
   border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
 }
-/* .row {
-  border: 0;
-}
-
-
-
-@media only screen and (max-width: 768px) {
-  .card img {
-    width: 350px;
-    height: 550px;
-  }
-  select {
-    height: 30px;
-  }
-  input {
-    width: 100%;
-    padding: 0px 50px;
-
-    border-left: 0px;
-    border-top: 0px;
-    border-right: 0px;
-
-    border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
-  }
-} */
 </style>
