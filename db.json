@@ -3,49 +3,49 @@
     {
       "id": 1,
       "title": "DRESS",
-      "image": "1.jpeg",
+      "image": "1.jpg",
       "price": "54"
     },
     {
       "id": 2,
       "title": "JUMPSUIT",
-      "image": "2.jpeg",
+      "image": "2.jpg",
       "price": "54"
     },
     {
       "id": 3,
       "title": "PANTS",
-      "image": "3.jpeg",
+      "image": "3.jpg",
       "price": "54"
     },
     {
       "id": 4,
       "title": "T-SHIRT",
-      "image": "4.jpeg",
+      "image": "4.jpg",
       "price": "54"
     },
     {
       "id": 5,
       "title": "T-SHIRT",
-      "image": "5.jpeg",
+      "image": "5.jpg",
       "price": "54"
     },
     {
       "id": 6,
       "title": "KNITWEAR",
-      "image": "6.jpeg",
+      "image": "6.jpg",
       "price": "54"
     },
     {
       "id": 7,
       "title": "DRESS",
-      "image": "7.jpeg",
+      "image": "7.jpg",
       "price": "54"
     },
     {
       "id": 8,
       "title": "KNITWEAR",
-      "image": "8.jpeg",
+      "image": "8.jpg",
       "price": "54"
     }
   ],
@@ -53,49 +53,49 @@
     {
       "id": 9,
       "title": "SHIRT",
-      "image": "1.jpeg",
+      "image": "1.jpg",
       "price": "54"
     },
     {
       "id": 10,
       "title": "JACKET",
-      "image": "2.jpeg",
+      "image": "2.jpg",
       "price": "54"
     },
     {
       "id": 11,
       "title": "JACKET",
-      "image": "3.jpeg",
+      "image": "3.jpg",
       "price": "54"
     },
     {
       "id": 12,
       "title": "SUIT",
-      "image": "4.jpeg",
+      "image": "4.jpg",
       "price": "54"
     },
     {
       "id": 13,
       "title": "HOODIE",
-      "image": "5.jpeg",
+      "image": "5.jpg",
       "price": "54"
     },
     {
       "id": 14,
       "title": "T-SHIRT",
-      "image": "6.jpeg",
+      "image": "6.jpg",
       "price": "54"
     },
     {
       "id": 15,
       "title": "SHIRT",
-      "image": "7.jpeg",
+      "image": "7.jpg",
       "price": "54"
     },
     {
       "id": 16,
       "title": "SHIRT",
-      "image": "8.jpeg",
+      "image": "8.jpg",
       "price": "54"
     }
   ],
@@ -103,49 +103,49 @@
     {
       "id": 17,
       "title": "T-SHIRT",
-      "image": "1.jpeg",
+      "image": "1.jpg",
       "price": "54"
     },
     {
       "id": 18,
       "title": "DRESS",
-      "image": "2.jpeg",
+      "image": "2.jpg",
       "price": "54"
     },
     {
       "id": 19,
       "title": "DRESS",
-      "image": "3.jpeg",
+      "image": "3.jpg",
       "price": "54"
     },
     {
       "id": 20,
       "title": "DRESS",
-      "image": "4.jpeg",
+      "image": "4.jpg",
       "price": "54"
     },
     {
       "id": 21,
       "title": "T-SHIRT",
-      "image": "5.jpeg",
+      "image": "5.jpg",
       "price": "54"
     },
     {
       "id": 22,
       "title": "BLOUSE",
-      "image": "6.jpeg",
+      "image": "6.jpg",
       "price": "54"
     },
     {
       "id": 23,
       "title": "T-SHIRT",
-      "image": "7.jpeg",
+      "image": "7.jpg",
       "price": "54"
     },
     {
       "id": 24,
       "title": "SKIRT",
-      "image": "8.jpeg",
+      "image": "8.jpg",
       "price": "54"
     }
   ],
@@ -153,19 +153,19 @@
     {
       "id": 25,
       "title": "KNITWEAR",
-      "image": "1.jpeg",
+      "image": "1.jpg",
       "price": "54"
     },
     {
       "id": 26,
       "title": "T-SHIRT",
-      "image": "2.jpeg",
+      "image": "2.jpg",
       "price": "54"
     },
     {
       "id": 27,
       "title": "JACKET",
-      "image": "3.jpeg",
+      "image": "3.jpg",
       "price": "54"
     }
   ]

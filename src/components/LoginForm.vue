@@ -10,7 +10,7 @@
     <div role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+          <h6 class="modal-title" id="exampleModalLabel">Login Form</h6>
           <button
             type="button"
             class="close"
@@ -29,7 +29,7 @@
             <div class="form-group">
               <label
                 for="name"
-                class="col-form-label font-weight-bold"
+                class="col-form-label h6"
                 style="min-width: 90px"
                 >Name:</label
               >
@@ -39,12 +39,12 @@
                 type="text"
                 placeholder="Name"
               />
-              <ErrorMessage name="name" as="p" class="fieldError" />
+              <ErrorMessage class="text-danger h6 small" name="name" as="p" />
             </div>
             <div class="form-group">
               <label
                 for="email"
-                class="col-form-label font-weight-bold"
+                class="col-form-label h6"
                 style="min-width: 90px"
                 >Email:</label
               >
@@ -54,12 +54,12 @@
                 type="email"
                 placeholder="Email"
               />
-              <ErrorMessage name="email" as="p" class="fieldError" />
+              <ErrorMessage class="text-danger h6 small" name="email" as="p" />
             </div>
             <div class="form-group">
               <label
                 for="password"
-                class="col-form-label font-weight-bold"
+                class="col-form-label h6"
                 style="min-width: 90px"
                 >Password:</label
               >
@@ -69,13 +69,19 @@
                 type="password"
                 placeholder="Password"
               />
-              <ErrorMessage name="password" as="p" class="fieldError" />
+              <ErrorMessage
+                class="text-danger h6 small"
+                name="password"
+                as="p"
+              />
             </div>
-            <div class="modal-footer">
-              <div class="d-flex mr-auto">
-                <a href="#"><p class="text-dark">Forgot your password?</p></a>
+            <div class="modal-footer flex-nowrap justify-content-between">
+              <div class="d-flex">
+                <a class="text-dark h6 small text-decoration-none" href="#">
+                  Forgot your password?</a
+                >
               </div>
-              <button @click="saveNameEmail" class="btn btn-dark">
+              <button @click="saveNameEmail" class="btn btn-dark h6 p-1">
                 Log in/Sign in
               </button>
             </div>
@@ -141,6 +147,7 @@ export default {
 .show {
   display: block;
 }
+/* 
 .fieldError {
   color: crimson;
   font-size: 12px;
@@ -161,5 +168,5 @@ export default {
   .modal-content {
     line-height: 6px !important;
   }
-}
+} */
 </style>

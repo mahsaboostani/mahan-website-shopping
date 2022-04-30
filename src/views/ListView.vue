@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row m-3">
     <ProductDetail
       v-for="item in products"
       :key="item.id"
@@ -40,13 +40,12 @@ export default {
 };
 </script>
 <style scoped>
-.row {
+/* .row {
   border: 0;
-  margin: 50px;
 }
 @media only screen and (max-width: 768px) {
   .row {
     margin: 0px !important;
   }
-}
+} */
 </style>

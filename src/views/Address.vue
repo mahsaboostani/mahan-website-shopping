@@ -1,163 +1,185 @@
 <template>
-  <div class="text-left">
-    <div class="row ml-5 mr-5 mt-5">
-      <div class="mt-5 col-md-6 d-flex justify-content-center">
-        <Form
-          ref="form"
-          @submit="onSubmit"
-          :validation-schema="schema"
-          @invalid-submit="onInvalidSubmit"
-        >
-          <div class="form-group">
-            <label
-              for="name"
-              class="col-form-label font-weight-bold"
-              style="min-width: 90px"
-              >Name:</label
-            >
-            <Field
-              v-model="address.name"
-              name="name"
-              type="text"
-              placeholder="name"
-            />
-            <ErrorMessage name="name" as="p" class="fieldError" />
-          </div>
-          <div class="form-group">
-            <label
-              for="lastName"
-              class="col-form-label font-weight-bold"
-              style="min-width: 90px"
-              >Last Name:</label
-            >
-            <Field
-              v-model="address.lastName"
-              name="lastName"
-              type="text"
-              placeholder="last name"
-            />
-            <ErrorMessage name="lastName" as="p" class="fieldError" />
-          </div>
-          <div class="form-group">
-            <label
-              for="country"
-              class="col-form-label font-weight-bold"
-              style="min-width: 90px"
-              >Country:</label
-            >
-            <Field
-              v-model="address.country"
-              name="country"
-              type="text"
-              placeholder="country"
-            />
-            <ErrorMessage name="country" as="p" class="fieldError" />
-          </div>
-          <div class="form-group">
-            <label
-              for="city"
-              class="col-form-label font-weight-bold"
-              style="min-width: 90px"
-              >City:</label
-            >
-            <Field
-              v-model="address.city"
-              name="city"
-              type="text"
-              placeholder="city"
-            />
-            <ErrorMessage name="city" as="p" class="fieldError" />
-          </div>
-          <div class="form-group">
-            <label
-              for="address"
-              class="col-form-label font-weight-bold"
-              style="min-width: 90px"
-              >Address:</label
-            >
-            <Field
-              v-model="address.addressInsideForm"
-              name="address"
-              type="text"
-              placeholder="address"
-            />
-            <ErrorMessage name="address" as="p" class="fieldError" />
-          </div>
-          <div class="form-group">
-            <label
-              for="postalCode"
-              class="col-form-label font-weight-bold"
-              style="min-width: 90px"
-              >Postal Code:</label
-            >
-            <Field
-              v-model="address.postalCode"
-              name="postalCode"
-              type="text"
-              placeholder="postal code"
-            />
-            <ErrorMessage name="postalCode" as="p" class="fieldError" />
-          </div>
-          <div class="form-group">
-            <label
-              for="phoneNumber"
-              class="col-form-label font-weight-bold"
-              style="min-width: 90px"
-              >Phone:</label
-            >
-            <Field
-              v-model="address.phoneNumber"
-              name="phoneNumber"
-              type="phone"
-              placeholder="phone"
-            />
-            <ErrorMessage name="phoneNumber" as="p" class="fieldError" />
-          </div>
-
-          <div class="row ml-auto">
-            <div class="col-md d-flex justify-content-start">
-              <button type="Submit" class="btn btn-dark">
-                Add New Address
-              </button>
+  <div class="container">
+    <div class="text-start">
+      <div class="row m-5">
+        <div class="col-md-3 mt-4">
+          <Form
+            ref="form"
+            @submit="onSubmit"
+            :validation-schema="schema"
+            @invalid-submit="onInvalidSubmit"
+          >
+            <div class="form-group">
+              <label
+                for="name"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >Name:</label
+              >
+              <Field
+                v-model="address.name"
+                name="name"
+                type="text"
+                placeholder="name"
+              />
+              <ErrorMessage name="name" as="p" class="text-danger h6 small" />
             </div>
-          </div>
-        </Form>
-      </div>
+            <div class="form-group">
+              <label
+                for="lastName"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >Last Name:</label
+              >
+              <Field
+                v-model="address.lastName"
+                name="lastName"
+                type="text"
+                placeholder="last name"
+              />
+              <ErrorMessage
+                name="lastName"
+                as="p"
+                class="text-danger h6 small"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                for="country"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >Country:</label
+              >
+              <Field
+                v-model="address.country"
+                name="country"
+                type="text"
+                placeholder="country"
+              />
+              <ErrorMessage
+                name="country"
+                as="p"
+                class="text-danger h6 small"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                for="city"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >City:</label
+              >
+              <Field
+                v-model="address.city"
+                name="city"
+                type="text"
+                placeholder="city"
+              />
+              <ErrorMessage name="city" as="p" class="text-danger h6 small" />
+            </div>
+            <div class="form-group">
+              <label
+                for="address"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >Address:</label
+              >
+              <Field
+                v-model="address.addressInsideForm"
+                name="address"
+                type="text"
+                placeholder="address"
+              />
+              <ErrorMessage
+                name="address"
+                as="p"
+                class="text-danger h6 small"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                for="postalCode"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >Postal Code:</label
+              >
+              <Field
+                v-model="address.postalCode"
+                name="postalCode"
+                type="text"
+                placeholder="postal code"
+              />
+              <ErrorMessage
+                name="postalCode"
+                as="p"
+                class="text-danger h6 small"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                for="phoneNumber"
+                class="col-form-label font-weight-bold"
+                style="min-width: 90px"
+                >Phone:</label
+              >
+              <Field
+                v-model="address.phoneNumber"
+                name="phoneNumber"
+                type="phone"
+                placeholder="phone"
+              />
+              <ErrorMessage
+                name="phoneNumber"
+                as="p"
+                class="text-danger h6 small"
+              />
+            </div>
 
-      <div class="col-md mt-5 d-flex ml-auto">
-        <div
-          v-for="(item, key) in addresses"
-          :key="item.index"
-          class="form-check m-2"
-        >
-          <section>
-            <input
-              @change="onChange($event)"
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              :value="key"
-              :id="key"
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              <span class="h5">&ensp;Address {{ key + 1 }}</span>
-              <div class="border border-3">
-                <div class="m-4">
-                  <p>{{ item.name }}</p>
-                  <p>{{ item.lastName }}</p>
-                  <p>{{ item.country }}</p>
-                  <p>{{ item.city }}</p>
-                  <p>{{ item.addressInsideForm }}</p>
-                  <p>{{ item.postalCode }}</p>
-                  <p>{{ item.phoneNumber }}</p>
-                </div>
+            <div class="row ml-auto">
+              <div class="col-md d-flex justify-content-start">
+                <button type="Submit" class="btn btn-dark mt-3 mb-5 p-1">
+                  Add New Address
+                </button>
               </div>
-            </label>
-          </section>
+            </div>
+          </Form>
         </div>
-      </div>
-      <div class="col-md d-flex align-items-end">
-        <button @click="deleteAddress" class="btn btn-dark">Delete</button>
+
+        <div class="col-md d-sm-block d-md-flex">
+          <div
+            v-for="(item, key) in addresses"
+            :key="item.index"
+            class="form-check"
+          >
+            <section>
+              <input
+                @change="onChange($event)"
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                :value="key"
+                :id="key"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                <span class="h5">&ensp;Address {{ key + 1 }}</span>
+                <div class="border border-3">
+                  <div class="m-4">
+                    <p>{{ item.name }}</p>
+                    <p>{{ item.lastName }}</p>
+                    <p>{{ item.country }}</p>
+                    <p>{{ item.city }}</p>
+                    <p>{{ item.addressInsideForm }}</p>
+                    <p>{{ item.postalCode }}</p>
+                    <p>{{ item.phoneNumber }}</p>
+                  </div>
+                </div>
+              </label>
+            </section>
+          </div>
+          <div class="col-md d-flex align-items-end">
+            <button @click="deleteAddress" class="btn btn-dark">Delete</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -252,7 +274,7 @@ export default {
 };
 </script>
 <style scoped>
-.fieldError {
+/* .fieldError {
   color: crimson;
   font-size: 12px;
 }
@@ -276,5 +298,5 @@ export default {
   .col-md {
     display: block !important;
   }
-}
+} */
 </style>

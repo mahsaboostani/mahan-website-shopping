@@ -1,29 +1,30 @@
 <template>
   <div class="container">
-    <div class="row mt-5">
-      <div class="col-md d-flex justify-content-start">
-        <select v-model="category">
+    <div
+      class="d-flex flex-sm-row justify-content-sm-center align-items-center"
+    >
+      <div class="col-md col-sm d-flex justify-content-center">
+        <select class="m-2 mb-0" v-model="category">
           <option disabled value="">category</option>
           <option>women</option>
           <option>men</option>
           <option>kids</option>
         </select>
-        <div class="d-flex justify-content-center ml-4">
-          <input
-            @click="hideProduct"
-            type="text"
-            v-model="search"
-            placeholder="Product: jacket,jeans,..."
-          />
-          <button @click="getProduct" class="ml-3 bg-dark text-light">
-            Search
-          </button>
-        </div>
+        <input
+          class="w-100 border-top-0"
+          @click="hideProduct"
+          type="text"
+          v-model="search"
+          placeholder="Product: jacket,jeans,..."
+        />
+        <button @click="getProduct" class="bg-dark text-light p-0">
+          Search
+        </button>
       </div>
     </div>
     <div class="row d-flex align-items-center mt-5">
       <div v-show="showLoading" class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
+        <span class="sr-only"></span>
       </div>
     </div>
 
@@ -144,23 +145,18 @@ export default {
 };
 </script>
 <style scoped>
-.row {
-  border: 0;
-}
-.col {
-  width: 300;
-  height: 800px;
-}
 input {
-  width: 100%;
-  padding: 0px 100px;
-
   border-left: 0px;
-  border-top: 0px;
+
   border-right: 0px;
 
   border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
 }
+/* .row {
+  border: 0;
+}
+
+
 
 @media only screen and (max-width: 768px) {
   .card img {
@@ -180,5 +176,5 @@ input {
 
     border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
   }
-}
+} */
 </style>

@@ -7,15 +7,20 @@
   >
     <div class="text-center">
       <p class="font-weight-bold text-light bg-danger">
-        {{ name }} you logged in
+        {{ name }}
       </p>
       <div class="sign row justify-content-center">
-        <router-link :to="{ name: 'Dashboard' }">
-          <a class="text-dark m-2">Dashboard</a>
+        <router-link class="text-decoration-none" :to="{ name: 'Dashboard' }">
+          <h6 class="text-dark mb-2">Dashboard</h6>
         </router-link>
       </div>
       <div>
-        <a @click="exiteAccount" class="text-dark m-2">Log Out</a>
+        <a
+          href="#"
+          @click="exiteAccount"
+          class="text-dark m-2 text-decoration-none pe-auto"
+          >Log Out</a
+        >
       </div>
       <!-- <div class="row justify-content-center">
         <a @click="exiteAccount" class="text-dark">Log Out</a>
@@ -45,7 +50,8 @@ export default {
 .show {
   display: block;
 }
-#drop a {
+
+/* #drop a {
   cursor: pointer;
 }
 #drop {
@@ -53,7 +59,7 @@ export default {
   right: 0;
   left: auto;
   top: 50%;
-}
+} */
 /* .dropdown-menu {
   background-color: #efefef;
 }
@@ -64,12 +70,12 @@ export default {
   text-decoration: none;
   cursor: pointer;
 } */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   div p {
     font-size: 13px;
   }
   #drop {
-    min-width: 0px !important;
+    min-width: none !important;
   }
-}
+} */
 </style>

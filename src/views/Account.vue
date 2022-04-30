@@ -1,56 +1,65 @@
 <template>
   <div class="container">
-    <div class="row text-left justify-content-end">
+    <div class="row m-5 text-start justify-content-end">
       <div class="col-md">
-        <div class="title text-left">
-          <h1>Account</h1>
+        <div class="title text-start mt-5 mb-3">
+          <h2>Account</h2>
         </div>
-        <div class="option">
-          <a @click="viewForm" class="text-dark" href="#"
+        <div class="mb-5">
+          <a
+            @click="viewForm"
+            class="text-dark text-decoration-none pe-auto"
+            href="#"
             ><h5>Change Password</h5></a
           >
         </div>
-        <div class="option">
-          <a @click="exiteAccount" class="btn btn-dark">Log Out</a>
+        <div>
+          <a @click="exiteAccount" class="btn btn-dark p-1">Log Out</a>
         </div>
       </div>
-      <div class="col-md">
+      <div class="col-md mt-5">
         <Form
           v-if="showForm"
           @submit="onSubmit"
           :validation-schema="schema"
           @invalid-submit="onInvalidSubmit"
         >
-          <div class="form-group">
+          <div class="form-group mb-3">
             <Field
               v-model="email"
               name="email"
               type="email"
               placeholder="email"
             />
-            <ErrorMessage name="email" as="p" class="fieldError" />
+            <ErrorMessage name="email" as="p" class="text-danger h6 small" />
           </div>
-          <div class="form-group">
+          <div class="form-group mb-3">
             <Field
               v-model="password"
               name="password"
               type="password"
               placeholder="password"
             />
-            <ErrorMessage name="password" as="p" class="fieldError" />
+            <ErrorMessage name="password" as="p" class="text-danger h6 small" />
           </div>
-          <div class="form-group">
+          <div class="form-group mb-3">
             <Field
               v-model="newPassword"
               name="newPassword"
               type="password"
               placeholder="new password"
             />
-            <ErrorMessage name="newPassword" as="p" class="fieldError" />
+            <ErrorMessage
+              name="newPassword"
+              as="p"
+              class="text-danger h6 small"
+            />
           </div>
 
           <div class="text-left">
-            <button @click="saveNameEmail" class="btn btn-dark">Save</button>
+            <button @click="saveNameEmail" class="btn btn-dark p-1">
+              Save
+            </button>
           </div>
         </Form>
       </div>
@@ -121,7 +130,7 @@ export default {
 .show {
   display: block;
 }
-.fieldError {
+/* .fieldError {
   color: crimson;
   font-size: 12px;
 }
@@ -162,5 +171,5 @@ a {
   .option {
     margin-bottom: 0px;
   }
-}
+} */
 </style>

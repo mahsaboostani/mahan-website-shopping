@@ -2,14 +2,14 @@
   <div class="row d-flex align-items-center" v-if="product">
     <div class="col-md">
       <img
-        class="card-img-top"
+        class="card-img-top w-75"
         :src="require(`@/assets/${category}/${product.image}`)"
         :alt="product.title"
       />
     </div>
 
-    <div class="col-md-3 text-left m-5">
-      <h5 class="mb-3" style="font-family: Playfair Display, serif">
+    <div class="col-md-3">
+      <h5 style="font-family: Playfair Display, serif">
         {{ product.title }}
       </h5>
       <div class="mb-4">
@@ -43,6 +43,11 @@ export default {
       product: null,
     };
   },
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+  },
   created() {
     EventService.getEvent(this.category, this.id)
       .then((response) => {
@@ -65,23 +70,22 @@ export default {
 };
 </script>
 <style scoped>
-.card {
-  border: 0;
-}
-img {
-  margin: 30px;
-  width: 550px;
-  height: 750px;
-}
-.card-body {
+/* .card-body {
   font-family: "Arima Madurai", cursive;
   font-family: "EB Garamond", serif;
   font-family: "Libre Baskerville", serif;
+} */
+/* .card {
+  border: 0;
 }
+
+
 @media only screen and (max-width: 768px) {
   img {
-    width: 350px !important;
+    width: 90% !important;
     height: 500px !important;
+    margin: auto;
+    object-fit: cover;
   }
-}
+} */
 </style>

@@ -1,22 +1,31 @@
 <template>
   <!--logo-->
-  <div class="container-fluid pt-2">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md"></div>
-      <div class="col-md-6 align-items-center justify-content-right">
-        <img class="pb-2" src="./assets/logo.svg" />
+      <div class="col-md-6 w-100 justify-content-center">
+        <img src="@/assets/logo.svg" alt="#" />
+        <!-- <h1
+          style="
+            font-family: Megrim, cursive;
+            font-weight: bold;
+            font-size: 160px;
+          "
+        >
+          mahan
+        </h1> -->
       </div>
       <div class="col-md">
         <ul
-          class="d-flex justify-content-end list-unstyled align-items-center mr-5"
+          class="d-flex justify-content-center list-unstyled align-items-center m-3 justify-content-md-end"
         >
-          <li class="m-2">
+          <li class="p-1">
             <router-link :to="{ name: 'Search' }"
-              ><i class="bi bi-search text-dark" style="font-size: 25px"></i
+              ><i class="bi bi-search text-dark h4"></i
             ></router-link>
           </li>
           <li>
             <CButton
+              class="p-1"
               color="primary"
               @click="
                 () => {
@@ -24,13 +33,11 @@
                 }
               "
             >
-              <i
-                v-if="!logged"
-                class="bi bi-person text-dark"
-                style="font-size: 30px"
-              ></i
+              <a href="#"
+                ><i v-if="!logged" class="bi bi-person text-dark h3"></i></a
             ></CButton>
             <CModal
+              class="w-100"
               :visible="activeForm.showForm"
               @close="
                 () => {
@@ -48,12 +55,12 @@
             </CModal>
 
             <CDropdown v-if="logged" color="secondary">
-              <CDropdownToggle :caret="false" variant="ghost">
-                <i
-                  v-if="logged"
-                  class="bi bi-person-check text-dark"
-                  style="font-size: 30px"
-                ></i
+              <CDropdownToggle class="p-1" :caret="false" variant="ghost">
+                <a href="#">
+                  <i
+                    v-if="logged"
+                    class="bi bi-person-check text-dark h3"
+                  ></i></a
               ></CDropdownToggle>
               <CDropdownMenu>
                 <Registration :activeLogged="showDropDownLog" />
@@ -62,12 +69,11 @@
           </li>
           <li>
             <CDropdown color="secondary">
-              <CDropdownToggle :caret="false">
-                <a class="badge text-dark" :value="cart.length" href="#">
+              <CDropdownToggle class="p-1" :caret="false">
+                <a class="badge p-0 text-dark" :value="cart.length" href="#">
                   <i
                     @click="viewDropDown"
-                    class="bi bi-cart3 text-dark"
-                    style="font-size: 27px"
+                    class="bi bi-cart3 text-dark h4"
                   ></i></a
               ></CDropdownToggle>
               <CDropdownMenu>
@@ -77,11 +83,8 @@
           </li>
           <li>
             <router-link :to="{ name: 'home' }">
-              <a href="#">
-                <i
-                  class="bi bi-house-door text-dark"
-                  style="font-size: 27px"
-                ></i> </a
+              <a class="p-0" href="#">
+                <i class="bi bi-house-door text-dark h4"></i> </a
             ></router-link>
           </li>
         </ul>
@@ -169,6 +172,7 @@ export default {
 #app {
   font-family: "Libre Bodoni", serif;
   // font-family: "Playfair Display", serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -190,6 +194,7 @@ nav {
 
 .badge:after {
   content: attr(value);
+
   font-size: 12px;
   color: #fff;
   background: red;
@@ -200,37 +205,37 @@ nav {
   top: -10px;
   opacity: 0.9;
 }
-.btn-group {
-  width: 45px;
-}
-.btn-group .btn {
-  padding-left: 0px;
-  padding-right: 0px;
-  border: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .container-fluid img {
-    width: 300px;
-    height: 150px;
-  }
-  .col-md ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center !important;
-    margin-right: 0px !important;
-  }
-  .col-md .bi {
-    font-size: 25px !important;
-  }
-  .dropdown-menu {
-    width: 200px;
-  }
-  .modal-dialog {
-    width: 300px !important;
-    height: 350px !important;
-  }
-  .modal-body {
-    padding: 0px !important;
-  }
-}
+// .btn-group {
+//   width: 45px;
+// }
+// .btn-group .btn {
+//   padding-left: 0px;
+//   padding-right: 0px;
+//   border: 0px;
+// }
+// @media only screen and (max-width: 768px) {
+//   .container-fluid img {
+//     width: 300px;
+//     height: 150px;
+//   }
+//   .col-md ul {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center !important;
+//     margin-right: 0px !important;
+//   }
+//   .col-md .bi {
+//     font-size: 25px !important;
+//   }
+//   .dropdown-menu {
+//     width: 200px;
+//   }
+//   .modal-dialog {
+//     width: 300px !important;
+//     height: 350px !important;
+//   }
+//   .modal-body {
+//     padding: 0px !important;
+//   }
+// }
 </style>

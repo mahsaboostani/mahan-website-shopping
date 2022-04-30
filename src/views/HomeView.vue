@@ -2,24 +2,27 @@
   <!---navbar-->
 
   <nav class="navbar navbar-expand fixed-bottom" id="navmenu" ref="navmenu">
-    <div class="container align-items-center justify-content-center pb-5 pt-0">
+    <div class="container align-items-center justify-content-center">
       <ul id="myMenu" class="navbar-nav">
         <li data-menuanchor="women" class="nav-item pr-4">
-          <a class="nav-link active" aria-current="page" href="#women"
+          <a
+            class="nav-link h6 text-dark active"
+            aria-current="page"
+            href="#women"
             >Mahan women</a
           >
         </li>
         <li data-menuanchor="men" class="nav-item pr-4">
-          <a class="nav-link" href="#men">Mahan men</a>
+          <a class="nav-link h6 text-dark" href="#men">Mahan men</a>
         </li>
         <li data-menuanchor="kids" class="nav-item pr-4">
-          <a class="nav-link" href="#kids">Mahan kids</a>
+          <a class="nav-link h6 text-dark" href="#kids">Mahan kids</a>
         </li>
         <li data-menuanchor="sale" class="nav-item pr-4">
-          <a class="nav-link" href="#sale">Sales</a>
+          <a class="nav-link h6 text-dark" href="#sale">Sales</a>
         </li>
         <li data-menuanchor="contact" class="nav-item pr-4">
-          <a class="nav-link" href="#contact">Contact us</a>
+          <a class="nav-link h6 text-dark" href="#contact">Contact us</a>
         </li>
       </ul>
     </div>
@@ -27,16 +30,20 @@
 
   <!---women clothes-->
   <div id="fullpage">
-    <section class="section" data-anchor="women">
+    <section class="section d-block" data-anchor="women">
       <div class="container">
-        <router-link :to="{ name: 'ListView', params: { category: 'women' } }"
-          ><img class="img" src="../assets/women.svg" alt=""
-        /></router-link>
+        <router-link :to="{ name: 'ListView', params: { category: 'women' } }">
+          <img
+            class="img float-md-left float-right"
+            src="../assets/women.svg"
+            alt=""
+          />
+        </router-link>
       </div>
     </section>
 
     <!---men clothes-->
-    <section class="section" data-anchor="men">
+    <section class="section d-block" data-anchor="men">
       <div class="container">
         <router-link :to="{ name: 'ListView', params: { category: 'men' } }"
           ><img class="img" src="../assets/men.svg" alt=""
@@ -45,7 +52,7 @@
     </section>
 
     <!---kids clothes-->
-    <section class="section" data-anchor="kids">
+    <section class="section d-block" data-anchor="kids">
       <div class="container">
         <router-link :to="{ name: 'ListView', params: { category: 'kids' } }"
           ><img class="img" src="../assets/kids.svg" alt=""
@@ -54,7 +61,7 @@
     </section>
 
     <!---sales-->
-    <section class="section" data-anchor="sale">
+    <section class="section d-block" data-anchor="sale">
       <div class="container">
         <a class="mylink" href="#">
           <router-link :to="{ name: 'ListView', params: { category: 'sale' } }"
@@ -65,9 +72,9 @@
     </section>
 
     <!---contact us-->
-    <section class="section" data-anchor="contact">
+    <section class="section d-block" data-anchor="contact">
       <div class="container-fluid text-left">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
           <div class="col-md">
             <h3>About us</h3>
             <p class="font-weight-bold">
@@ -88,8 +95,8 @@
                 cols="10"
                 rows="5"
               ></textarea>
-              <div class="btn">
-                <button type="submit">Send</button>
+              <div class="text-center mt-2">
+                <button class="btn btn-dark" type="submit">Send</button>
               </div>
             </form>
           </div>
@@ -175,20 +182,16 @@ export default {
 </script>
 
 <style scoped>
-.active a {
-  color: red !important;
+h6 {
+  font-size: 0.5rem;
 }
-section img {
-  height: 70vh;
-  /* widows: 100%; */
-}
-.fp-table {
-  display: block;
-}
+/* 
+
+
 .hide {
   display: none;
 }
-@media only screen and (max-width: 768px) {
+{
   .navbar .nav-item {
     padding-right: 0px !important;
     font-size: 10px;
@@ -207,6 +210,20 @@ section img {
   }
   .section .container-fluid .bi {
     font-size: 17px !important;
+  }
+} */
+section img {
+  height: 70vh;
+}
+.active a {
+  color: red !important;
+}
+/* .fp-table {
+  display: block;
+} */
+@media only screen and (max-width: 768px) {
+  section img {
+    float: right;
   }
 }
 </style>

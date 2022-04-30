@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="w-25">
     <router-link
       :to="{
         name: 'ProductCard',
         params: { id: product.id, category: category },
       }"
     >
-      <div class="card d-flex justify-content-center pl-4 pr-4">
+      <div class="card d-flex border-none justify-content-center">
         <img
           class="card-img-top"
           :src="require(`@/assets/${category}/${product.image}`)"
@@ -14,11 +14,11 @@
         />
       </div>
     </router-link>
-    <div class="card-body mb-5">
-      <h5 style="font-family: Playfair Display, serif">
+    <div class="card-body">
+      <h6 class="h6" style="font-family: Playfair Display, serif">
         {{ product.title }}
-      </h5>
-      <div class="d-flex justify-content-center">
+      </h6>
+      <div class="d-flex h6 justify-content-center">
         <h6 :class="{ saleShow: showSale }">$ 70</h6>
         <h6 class="text-danger" v-if="showSale">$ {{ product.price }}</h6>
       </div>
@@ -26,7 +26,7 @@
       <a
         @click="addToCart"
         href="#"
-        class="btn m-2 btn-dark text-light rounded-pill"
+        class="btn btn-dark text-light p-1 rounded-pill"
         >Add to cart</a
       >
     </div>
@@ -56,16 +56,10 @@ export default {
 };
 </script>
 <style scoped>
-.card {
-  border: 0;
-}
 .card-img-top:hover {
   border: 3px solid rgba(0, 0, 0, 0.4);
 }
-.card img {
-  width: 400px;
-  height: 600px;
-}
+
 .card-body {
   font-family: "Arima Madurai", cursive;
   font-family: "EB Garamond", serif;
@@ -73,13 +67,17 @@ export default {
 }
 .saleShow {
   text-decoration-line: line-through;
-  margin-right: 25px;
+  margin-right: 2.5vh;
 }
 
 @media only screen and (max-width: 768px) {
-  .card img {
-    width: 350px;
-    height: 550px;
+  .btn {
+    font-size: 0.5rem;
+    border-radius: 0px !important;
+    padding: 0px !important;
+  }
+  .card-body h6 {
+    font-size: 0.4rem;
   }
 }
 </style>

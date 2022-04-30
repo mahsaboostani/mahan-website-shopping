@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <h3></h3>
-  </div>
-  <div class="row">
-    <div class="col-md" v-for="(item, key) in cart" :key="item.index">
+  <div class="row m-4">
+    <div class="col-md-3 mb-4" v-for="(item, key) in cart" :key="item.index">
       <div class="card d-flex justify-content-between">
         <div>
           <img
@@ -12,32 +9,33 @@
             :alt="item.title"
           />
         </div>
-        <div class="card-body d-flex text-center align-content-center">
-          <strong class="mr-4 h7 font-weight-bold">{{ item.title }}</strong>
+        <div
+          class="card-body d-flex justify-content-between align-content-center"
+        >
+          <h6 class="h6 font-weight-bold">{{ item.title }}</h6>
           <p class="mr-4">${{ item.price }}</p>
 
           <a @click.prevent="removeFromCart(item)" href=""
-            ><i class="bi text-dark bi-dash-lg mr-4"></i
+            ><i class="bi text-dark bi-dash-lg"></i
           ></a>
-          <span class="border-bottom pl-2 pr-2 mr-4">{{ item.quantity }}</span>
+          <span class="border-bottom">{{ item.quantity }}</span>
           <a @click.prevent="addToCart(item)" href=""
-            ><i class="bi text-dark bi-plus-lg mr-4"></i
+            ><i class="bi text-dark bi-plus-lg"></i
           ></a>
 
           <div>
             <a @click="removeProduct(item)" href="#">
-              <i class="bi text-dark w-100 bi-trash-fill mr-4"></i
+              <i class="bi text-dark w-100 bi-trash-fill"></i
             ></a>
           </div>
         </div>
       </div>
     </div>
-    <hr />
   </div>
   <div class="d-flex justify-content-start align-items-center">
     <span class="m-5 h3 font-weight-bold">Total: {{ totalPrice }} </span>
     <router-link :to="{ path: '/product/payment' }"
-      ><a class="m-5 btn btn-dark pl-5 pr-5" href="#"
+      ><a class="m-5 btn btn-dark pe-5 ps-5" href="#"
         ><p class="h5">Continue</p></a
       ></router-link
     >
@@ -71,7 +69,7 @@ export default {
 };
 </script>
 <style scoped>
-.card {
+/* .card {
   border: 0;
   border-bottom: 0px;
 }
@@ -80,7 +78,6 @@ export default {
   width: 400px;
 }
 .card-body {
-  margin-left: 10px;
   justify-content: center;
 }
 @media only screen and (max-width: 768px) {
@@ -107,5 +104,5 @@ export default {
   div span {
     font-size: 13px !important;
   }
-}
+} */
 </style>
