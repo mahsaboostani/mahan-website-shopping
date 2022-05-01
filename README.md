@@ -1,29 +1,20 @@
-# mahan-shopping-website
+# Mahan Webshop
+This webshop is about clothing and it has products for women, men and kids.
 
-## Project setup
-```
-npm install
-```
+This is a webshop based on:
+- Vue.js
+- Bootstrap
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+The data will be saved on your local storage.
+## Design 
+I have designed this webshop with figma, you can see it [here](https://www.figma.com/file/rUSAqzLPZmmSMoanvFGdI7/Mahan-website?node-id=0%3A1.)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Install
+You can simply run `npm install` to install all dependencies. 
+## Run
+To run the project you can use `npm run serve`.
 
-### Run your unit tests
-```
-npm run test:unit
-```
+For making it ready to deliver to production you can use `npm run build`. 
 
-### Lints and fixes files
-```
-npm run lint
-```
+Also, you can see a live [Demo](https://mahan-webshop.herokuapp.com/) on Heroku.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
