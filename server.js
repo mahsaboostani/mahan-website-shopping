@@ -3,7 +3,7 @@ const serveStatic = require("serve-static");
 const path = require("path");
 const app = express();
 app.use(serveStatic(path.join(__dirname, "dist")));
-//const port = process.env.PORT || 80;
+const port = process.env.PORT || 80;
 app.listen(port);
 
 const jsonServer = require("json-server");
@@ -15,8 +15,8 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 server.use(router);
 
-const port = process.env.PORT || 3000;
+const portS = process.env.PORT || 3000;
 
-server.listen(port, () => {
-  console.log(`JSON Server is running on port ${port}`);
+server.listen(portS, () => {
+  console.log(`JSON Server is running on port ${portS}`);
 });
